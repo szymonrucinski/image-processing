@@ -72,42 +72,65 @@ void error()
 
 void erosion(const char* img_name)
 {
+    int k=0;
     CImg<unsigned char> image_original(img_name);
     int height = image_original.height();
     int width = image_original.width();
     CImg<unsigned char> image_eroded(height, width);
-    int mask[3][3] = {{1,1,1},{1,1,1},{1,1,1}}; //1 for white, 0 for black
-    for(int y = 0; y < height; y++)
+    int mask[3][3] = {{0,0,0},{0,0,0},{0,0,0}}; //1 for white, 0 for black
+
+
+   for(int y = 0; y < height; y++)
     {
         for(int x = 0; x < width; x++)
         {
+            //if coordinate are near the edge
             if(x==0||x==width-1||y==0||y==height-1)
             {
+                //replace pixels from original to eroded
                 image_eroded(x, y) = image_original(x, y);
             }
             else
             {
-                if(image_original(x, y)==mask[1][1]*255)
+                //if given pixel is black and corresponds to given mask element
+                //check if we have got a pm,sm,nm
+                if(image_original(x, y)==mask[1][1])
                 {
+                    //cout<<"black"<<endl;
+
+                    //checking 3X3 pixel mask and neighbourhood
                     for(int j = y-1, b = 0; j <= y+1; j++, b++)
                     {
                         for(int i = x-1, a = 0; i <= x+1; i++, a++)
                         {
-                            if(mask[a][b]==0&&image_original(i, j)!=mask[1][1]*255)
+
+                            //if pixel is white
+                            //partial match, no match that means that we turn black values into white
+                            if(image_original(i, j)!=mask[1][1])
                             {
-                                image_eroded(x, y) = 255 * abs(1-mask[1][1]);
+                               // cout<<"white"<<endl;
+                                image_eroded(x, y) = 255;
                                 i = x+2;
                                 j = y+2;
+                                //we finish the loops
+
+
                             }
                         }
-                        if(j == y+1) image_eroded(x, y) = image_original(x, y);
+                        //if pixels are black
+                        if(j == y+1){ image_eroded(x, y) = image_original(x, y);k++;cout<<k<<endl;}
+
                     }
                 }
+                //if pixels are white just copy them
                 else image_eroded(x, y) = image_original(x, y);
+
             }
         }
     }
     image_eroded.save("image_eroded.bmp");
+    cout<<"Murzyn"<<endl;
+
 }
 
 void erosion_task(const char* img_name, int option)
@@ -177,7 +200,7 @@ void dilation(const char* img_name)
     int height = image_original.height();
     int width = image_original.width();
     CImg<unsigned char> image_dilated(height, width);
-    int mask[3][3] = {{1,1,1},{1,1,1},{1,1,1}};
+    int mask[3][3] = {{0,0,0},{0,0,0},{0,0,0}};
     for(int y = 0; y < height; y++)
     {
         for(int x = 0; x < width; x++)
