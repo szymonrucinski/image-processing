@@ -85,6 +85,9 @@
 		<Unit filename="C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/header_files/functions.h">
 			<Option target="Task4"/>
 		</Unit>
+		<Unit filename="C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/source_files/Fourier.cpp">
+			<Option target="Task4"/>
+		</Unit>
 		<Unit filename="C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/source_files/functions.cpp">
 			<Option target="Task4"/>
 		</Unit>

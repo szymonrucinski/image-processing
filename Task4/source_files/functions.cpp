@@ -72,6 +72,7 @@ CImg<complex<double>>& shift(CImg<complex<double>> to_shift, int width, int heig
 
 CImg<complex<double>>& make_fourier(CImg<complex<double>> original, int width, int height, bool inverse)
 { int calculate = 0;
+int repetition =0;
     CImg<complex<double>>* horizontal = new CImg<complex<double>>(width, height);
     CImg<complex<double>>* vertical = new CImg<complex<double>>(width, height);
     complex<double> sum(0,0);
@@ -85,29 +86,27 @@ CImg<complex<double>>& make_fourier(CImg<complex<double>> original, int width, i
             sum = 0;
             for(int n = 0; n < width; n++)
             {
+                //n{0;511}
                 if(inverse == true) angle = 2*PI*n*x/width;
                 else angle = -2*PI*n*x/width;
-                //http://www.cs.otago.ac.nz/cosc453/student_tutorials/fourier_analysis.pdf
-                //PAGE 9
-                ////////////////////////////////////////////////////////////
-                //f(u)= 1/N*Σ top(N-1) bottom(x=0) * f(x)*e^(-i*2*pi*ux/N)//
-                ///////////////////////////////////////////////////////////
-                //f(x)*e^(i*2*pi*ux/N)
-                //Σ=R+li*(cos(p)- isin)(p));
-                //p=angle
-                //f(x)*e^(p/n)
 
                 W = cos(angle) +1i * sin(angle);
-                //cout<< 1i<<endl;
                 W *= original(n, y);
                 sum += W;
+                calculate =n;
+                repetition++;
 
             }
+
+
+            Sleep(5000);
             if(inverse == false) (*horizontal)(x, y) = sum;
             else (*horizontal)(x, y) = sum/(complex<double>)(width);
-            cout<<calculate<<y<<endl;
+            cout<<sum<<endl;
+            cout<<x<<"::"<<y<<endl;
+            Sleep(1000);
 
-            calculate = 0;        }
+                    }
     }
     for(int x = 0; x < width; x++)
     {

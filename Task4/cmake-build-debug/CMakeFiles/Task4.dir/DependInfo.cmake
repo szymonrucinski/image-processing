@@ -4,6 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
+  "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/source_files/Fourier.cpp" "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/cmake-build-debug/CMakeFiles/Task4.dir/source_files/Fourier.cpp.obj"
   "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/source_files/functions.cpp" "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/cmake-build-debug/CMakeFiles/Task4.dir/source_files/functions.cpp.obj"
   "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/source_files/main.cpp" "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/cmake-build-debug/CMakeFiles/Task4.dir/source_files/main.cpp.obj"
   )

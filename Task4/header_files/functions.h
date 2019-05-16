@@ -13,7 +13,7 @@ void help();
 int checkFile(const char* img);
 //dopytac Krzycha
 void slow_fourier(const char* img_name);
-//dopytac
+//
 CImg<complex<double>>& make_fourier(CImg<complex<double>> original, int width, int height, bool inverse);
 //dopytac
 void normalization(CImg<complex<double>> to_normalize, int width, int height);

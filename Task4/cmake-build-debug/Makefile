@@ -122,6 +122,33 @@ Task4/fast:
 	$(MAKE) -f CMakeFiles\Task4.dir\build.make CMakeFiles/Task4.dir/build
 .PHONY : Task4/fast
 
+source_files/Fourier.obj: source_files/Fourier.cpp.obj
+
+.PHONY : source_files/Fourier.obj
+
+# target to build an object file
+source_files/Fourier.cpp.obj:
+	$(MAKE) -f CMakeFiles\Task4.dir\build.make CMakeFiles/Task4.dir/source_files/Fourier.cpp.obj
+.PHONY : source_files/Fourier.cpp.obj
+
+source_files/Fourier.i: source_files/Fourier.cpp.i
+
+.PHONY : source_files/Fourier.i
+
+# target to preprocess a source file
+source_files/Fourier.cpp.i:
+	$(MAKE) -f CMakeFiles\Task4.dir\build.make CMakeFiles/Task4.dir/source_files/Fourier.cpp.i
+.PHONY : source_files/Fourier.cpp.i
+
+source_files/Fourier.s: source_files/Fourier.cpp.s
+
+.PHONY : source_files/Fourier.s
+
+# target to generate assembly for a file
+source_files/Fourier.cpp.s:
+	$(MAKE) -f CMakeFiles\Task4.dir\build.make CMakeFiles/Task4.dir/source_files/Fourier.cpp.s
+.PHONY : source_files/Fourier.cpp.s
+
 source_files/functions.obj: source_files/functions.cpp.obj
 
 .PHONY : source_files/functions.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... edit_cache
 	@echo ... Task4
 	@echo ... rebuild_cache
+	@echo ... source_files/Fourier.obj
+	@echo ... source_files/Fourier.i
+	@echo ... source_files/Fourier.s
 	@echo ... source_files/functions.obj
 	@echo ... source_files/functions.i
 	@echo ... source_files/functions.s

@@ -232,6 +232,6 @@ add_executable(Task4
         source_files/functions.cpp
        header_files/functions.h
 
-        )
+        source_files/Fourier.cpp)
 
 target_link_libraries(Task4 ${SYSTEM_LIBS})
