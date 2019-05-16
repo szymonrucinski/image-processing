@@ -122,6 +122,33 @@ Task3/fast:
 	$(MAKE) -f CMakeFiles\Task3.dir\build.make CMakeFiles/Task3.dir/build
 .PHONY : Task3/fast
 
+source_files/RegionGrowing.obj: source_files/RegionGrowing.cpp.obj
+
+.PHONY : source_files/RegionGrowing.obj
+
+# target to build an object file
+source_files/RegionGrowing.cpp.obj:
+	$(MAKE) -f CMakeFiles\Task3.dir\build.make CMakeFiles/Task3.dir/source_files/RegionGrowing.cpp.obj
+.PHONY : source_files/RegionGrowing.cpp.obj
+
+source_files/RegionGrowing.i: source_files/RegionGrowing.cpp.i
+
+.PHONY : source_files/RegionGrowing.i
+
+# target to preprocess a source file
+source_files/RegionGrowing.cpp.i:
+	$(MAKE) -f CMakeFiles\Task3.dir\build.make CMakeFiles/Task3.dir/source_files/RegionGrowing.cpp.i
+.PHONY : source_files/RegionGrowing.cpp.i
+
+source_files/RegionGrowing.s: source_files/RegionGrowing.cpp.s
+
+.PHONY : source_files/RegionGrowing.s
+
+# target to generate assembly for a file
+source_files/RegionGrowing.cpp.s:
+	$(MAKE) -f CMakeFiles\Task3.dir\build.make CMakeFiles/Task3.dir/source_files/RegionGrowing.cpp.s
+.PHONY : source_files/RegionGrowing.cpp.s
+
 source_files/functions.obj: source_files/functions.cpp.obj
 
 .PHONY : source_files/functions.obj
@@ -185,6 +212,9 @@ help:
 	@echo ... rebuild_cache
 	@echo ... Task3
 	@echo ... edit_cache
+	@echo ... source_files/RegionGrowing.obj
+	@echo ... source_files/RegionGrowing.i
+	@echo ... source_files/RegionGrowing.s
 	@echo ... source_files/functions.obj
 	@echo ... source_files/functions.i
 	@echo ... source_files/functions.s

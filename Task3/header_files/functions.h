@@ -18,9 +18,9 @@ void dilation(const char* img_name);
 void erosion(const char* img_name);
 //DONE
 void display(const char* img_name);
-
+//done
 void opening(const char* img_name);
-
+//done
 void closing(const char* img_name);
 
 void HMT(const char* img_name);
@@ -31,6 +31,7 @@ CImg<int>& iterative_fun(CImg<int>* image_to_edition, CImg<int>* image_complemen
 CImg<int>& complement(const char* img_name);
 CImg<int>& dilation_to_fun(CImg<int>* image_original, int mask, int width, int height);
 void reggrow(const char* img_name, int threshold, int x, int y);
+/////////////////////////
 void HMT_task(const char* img_name);
 
 

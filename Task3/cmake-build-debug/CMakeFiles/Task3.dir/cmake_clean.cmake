@@ -1,6 +1,7 @@
 file(REMOVE_RECURSE
   "CMakeFiles/Task3.dir/source_files/main.cpp.obj"
   "CMakeFiles/Task3.dir/source_files/functions.cpp.obj"
+  "CMakeFiles/Task3.dir/source_files/RegionGrowing.cpp.obj"
   "../Task3.pdb"
   "../Task3.exe"
   "../Task3.exe.manifest"

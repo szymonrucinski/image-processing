@@ -533,111 +533,19 @@ void reggrow(const char* img_name, int threshold, int x, int y)
 {
 
     CImg<unsigned char> image(img_name);  //our image
-
-
     int width = image.width();
     int height = image.height();
     int spectrum = image.spectrum();
 
-    CImg<unsigned char> result (width, height, 1, spectrum, 0);
+    bool WasChecked[width][height] = {0};
 
+    //tabela sprawdzen
 
-    //declaration of a 2 dimensional array
-    //all of the indexes store XY picture-coordinates
-    bool **checker = 0;
-    checker = new bool *[width];
-
-    //allocate all pointers in 2d array
-    for (int i = 0; i < width; i++)
-        checker[i] = new bool[height];
-
-    for (int i = 0; i<width; i++)
-        for (int j = 0;j<height; j++) {
-            checker[i][j] = false;
-        }
-
-    //new coordinates
-    int new_x = 0;
-    int new_y = 0;
-
-    //stack structure holding pair of coordinates of matching pixel
-    stack<pair <int, int> >pixels;
-    pixels.push(make_pair(x, y));
-
-    while (!pixels.empty()) {
-
-        pair<int, int> currentPair = pixels.top();
-        new_x = currentPair.first;
-        new_y = currentPair.second;
-        pixels.pop();
-
-        //RIGHT SIDE
-        if (new_y > 0 && new_y < height - 1 && new_x > 0 && new_x<width - 1) {
-            if (checker[new_x + 1][new_y] == false) {
-
-                //checking wether it does not exceed the threshold
-                if (abs((image(x, y) - image(new_x + 1, new_y))) < threshold) {
-
-                    pixels.push(make_pair(new_x + 1, new_y));
-
-                    for (int z = 0; z < spectrum; z++)
-                        //assign one (white) color
-                        image(new_x + 1, new_y, 0, z) = 255;
-
-                    //assign in check array that pixel(x,y) satisfies condistions
-                    checker[new_x + 1][new_y] = true;
-                }
-                else
-                    checker[new_x + 1][new_y] = true;
-            }
-
-            //LEFT SIDE
-            if (checker[new_x - 1][new_y] == false) {
-                if (abs((image(x, y) - image(new_x - 1, new_y))) < threshold) {
-                    pixels.push(make_pair(new_x - 1, new_y));
-
-                    for (int k = 0; k<3; k++)
-                        image(new_x - 1, new_y, 0, k) = 255;
-
-                    checker[new_x - 1][new_y] = true;
-                }
-                else
-                    checker[new_x - 1][new_y] = true;
-            }
-
-            //ABOVE
-            if (checker[new_x][new_y + 1] == false) {
-                if (abs(image(x, y) - image(new_x, new_y + 1)) < threshold) {
-                    pixels.push(make_pair(new_x, new_y + 1));
-
-                    for (int k = 0; k<3; k++)
-                        image(new_x, new_y + 1, 0, k) = 255;
-
-                    checker[new_x][new_y + 1] = true;
-                }
-                else
-                    checker[new_x][new_y + 1] = true;
-            }
-
-            //BELOW
-            if (checker[new_x][new_y - 1] == false) {
-                if (abs((image(x, y) - image(new_x, new_y - 1))) < threshold) {
-                    pixels.push(make_pair(new_x, new_y - 1));
-
-                    for (int k = 0; k<3; k++)
-                        image(new_x, new_y - 1, 0, k) = 255;
-
-                    checker[new_x][new_y - 1] = true;
-                }
-                else
-                    checker[new_x][new_y - 1] = true;
-            }
-        }
+    if(x>(height-1)||(x<0)||(y<0) ||y>(width-1))
+    {
+        cout<<"assign proper values"<<endl;
     }
 
-    //free memory after dynamic allocation
-    for (int i = 0; i < width; i++) delete[] checker[i];
-    delete[] checker;
 
 
 

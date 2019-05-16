@@ -236,6 +236,8 @@ CImg.h
 stdint.h
 -
 
+C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/source_files/RegionGrowing.cpp
+
 C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/source_files/functions.cpp
 iostream
 -
@@ -253,4 +255,14 @@ fstream
 -
 cmath
 -
+
+C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/source_files/main.cpp
+iostream
+-
+cstdlib
+-
+header_files/functions.h
+C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/source_files/header_files/functions.h
+header_files/CImg.h
+C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/source_files/header_files/CImg.h
 

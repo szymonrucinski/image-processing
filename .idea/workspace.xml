@@ -1,0 +1,390 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true" buildAllGenerated="true">
+    <generated>
+      <config projectName="Task3" targetName="Task3" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="912ff068-b9ea-45a8-9a4b-67be35da019f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Task3/header_files/RegionGrowing.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task3/source_files/RegionGrowing.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/.idea/Task1.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/.idea/serialmonitor_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/IMAGES/F5mask1.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/IMAGES/F5test1.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/IMAGES/eiffel-tower-silhouette.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/IMAGES/lena.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/IMAGES/lenabibw.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/IMAGES/lenabwi.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/IMAGES/lenac.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/IMAGES/lenacu.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/IMAGES/test.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/Task3.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeCache.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/3.12.3/CMakeCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/3.12.3/CMakeCXXCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_C.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/3.12.3/CMakeDetermineCompilerABI_CXX.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/3.12.3/CMakeRCCompiler.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/3.12.3/CMakeSystem.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/CMakeCCompilerId.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdC/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/CMakeCXXCompilerId.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/3.12.3/CompilerIdCXX/a.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/CMakeDirectoryInformation.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/CMakeOutput.log" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Makefile.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/TargetDirectories.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/CXX.includecache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/DependInfo.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/build.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/cmake_clean.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/depend.internal" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/depend.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/flags.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/includes_CXX.rsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/link.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/linklibs.rsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/objects.a" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/objects1.rsp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/progress.make" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/source_files/RegionGrowing.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/source_files/functions.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/Task3.dir/source_files/main.cpp.obj" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/clion-environment.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/clion-log.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/cmake.check_cache" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/feature_tests.bin" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/feature_tests.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/feature_tests.cxx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/Makefile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/Task1.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/Task2.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/Task3.cbp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/cmake-build-debug/cmake_install.cmake" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/header_files/CImg.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/header_files/functions.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/image_dilated.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/image_eroded.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/image_processed.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/newOne.bmp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/source_files/functions.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Task4/source_files/main.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/Task3.exe" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/Task3.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/DependInfo.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/DependInfo.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/cmake_clean.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/cmake_clean.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/objects.a" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/objects.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/objects1.rsp" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/objects1.rsp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/progress.make" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/progress.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/source_files/functions.cpp.obj" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/Task3.dir/source_files/functions.cpp.obj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/progress.marks" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/CMakeFiles/progress.marks" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/Makefile" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/Makefile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/cmake-build-debug/Task3.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/cmake-build-debug/Task3.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/header_files/functions.h" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/header_files/functions.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Task3/source_files/functions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/Task3/source_files/functions.cpp" afterDir="false" />
+    </list>
+    <ignored path="$PROJECT_DIR$/Task3/cmake-build-debug/" />
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FUSProjectUsageTrigger">
+    <session id="-1013786694">
+      <usages-collector id="statistics.lifecycle.project">
+        <counts>
+          <entry key="project.closed" value="1" />
+          <entry key="project.open.time.1" value="1" />
+          <entry key="project.opened" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.open">
+        <counts>
+          <entry key="bmp" value="4" />
+          <entry key="cpp" value="4" />
+          <entry key="h" value="1" />
+          <entry key="txt" value="2" />
+          <entry key="xml" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.open">
+        <counts>
+          <entry key="CMakeLists.txt" value="2" />
+          <entry key="Image" value="4" />
+          <entry key="ObjectiveC" value="5" />
+          <entry key="XML" value="1" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.extensions.edit">
+        <counts>
+          <entry key="cpp" value="111" />
+          <entry key="h" value="53" />
+          <entry key="txt" value="3" />
+        </counts>
+      </usages-collector>
+      <usages-collector id="statistics.file.types.edit">
+        <counts>
+          <entry key="CMakeLists.txt" value="3" />
+          <entry key="ObjectiveC" value="164" />
+        </counts>
+      </usages-collector>
+    </session>
+  </component>
+  <component name="FileEditorManager">
+    <leaf>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task3/source_files/functions.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="432">
+              <caret line="561" selection-start-line="561" selection-end-line="561" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task3/source_files/main.cpp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task3/header_files/RegionGrowing.h">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task4/.idea/vcs.xml">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task4/CMakeLists.txt">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="455">
+              <caret line="237" column="27" selection-start-line="237" selection-start-column="27" selection-end-line="237" selection-end-column="27" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Task4/source_files/main.cpp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Task3/source_files/RegionGrowing.cpp">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+    </leaf>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>region</find>
+      <find>reg</find>
+      <find>3</find>
+      <find>TASK</find>
+    </findStrings>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Task3/source_files/functions.cpp" />
+        <option value="$PROJECT_DIR$/Task3/source_files/main.cpp" />
+        <option value="$PROJECT_DIR$/Task3/source_files/RegionGrowing.cpp" />
+        <option value="$PROJECT_DIR$/Task3/header_files/RegionGrowing.h" />
+        <option value="$PROJECT_DIR$/Task4/CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectFrameBounds" extendedState="6">
+    <option name="x" value="1912" />
+    <option name="y" value="-8" />
+    <option name="width" value="1696" />
+    <option name="height" value="1026" />
+  </component>
+  <component name="ProjectView">
+    <navigator proportions="" version="1">
+      <foldersAlwaysOnTop value="true" />
+    </navigator>
+    <panes>
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="Task3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Poprawka_Image_Processing" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Task3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Poprawka_Image_Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="Task4" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Task3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Poprawka_Image_Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="Task4" type="462c0819:PsiDirectoryNode" />
+              <item name=".idea" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="Task3" type="b2602c69:ProjectViewProjectNode" />
+              <item name="Poprawka_Image_Processing" type="462c0819:PsiDirectoryNode" />
+              <item name="Task4" type="462c0819:PsiDirectoryNode" />
+              <item name="source_files" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
+  </component>
+  <component name="PropertiesComponent">
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Task4/CMakeLists.txt" />
+    <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
+    <property name="nodejs_npm_path_reset_for_default_project" value="true" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Szymon\Desktop\Poprawka_Image_Processing\Task4" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\Szymon\Desktop\Poprawka_Image_Processing" />
+      <recent name="C:\Users\Szymon\Desktop\Poprawka_Image_Processing\Task3\header_files" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Application.Build All">
+    <configuration name="Build All" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" CONFIG_NAME="Debug" RUN_PATH="$PROJECT_DIR$/Task4/CMakeLists.txt" EXPLICIT_BUILD_TARGET_NAME="all">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="Task3" type="CMakeRunConfiguration" factoryName="Application" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Task3" TARGET_NAME="Task3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Task3" RUN_TARGET_NAME="Task3">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="Application.Build All" />
+      <item itemvalue="Application.Task3" />
+    </list>
+  </component>
+  <component name="ToolWindowManager">
+    <frame x="1912" y="-8" width="1696" height="1026" extended-state="6" />
+    <layout>
+      <window_info id="Favorites" side_tool="true" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2857143" />
+      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info anchor="bottom" id="CMake" />
+      <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Messages" visible="true" weight="0.32932165" />
+      <window_info anchor="bottom" id="Terminal" />
+      <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info anchor="bottom" id="Serial Monitor" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" weight="0.32932165" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="VcsContentAnnotationSettings">
+    <option name="myLimit" value="2678400000" />
+  </component>
+  <component name="editorHistoryManager">
+    <entry file="file://$PROJECT_DIR$/Task3/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task3/image_eroded.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task3/image_processed.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task3/newOne.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task3/image_dilated.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task3/source_files/functions.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="432">
+          <caret line="561" selection-start-line="561" selection-end-line="561" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task3/source_files/main.cpp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task3/source_files/RegionGrowing.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task3/header_files/RegionGrowing.h">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task4/.idea/vcs.xml">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task4/CMakeLists.txt">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="455">
+          <caret line="237" column="27" selection-start-line="237" selection-start-column="27" selection-end-line="237" selection-end-column="27" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Task4/source_files/main.cpp">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+  </component>
+</project>
