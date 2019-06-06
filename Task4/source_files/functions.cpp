@@ -547,12 +547,18 @@ CImg<complex<double>>& fast_fast_fourier(CImg<complex<double>> original, int wid
             row[x] = original(x, y);
         }
         row = split(row, inverse);
+
         for(int x = 0; x < width; x++)
         {
             if(inverse == true) (*horizontal)(x, y) = row[x]/(complex<double>)(width);
             else (*horizontal)(x, y) = row[x];
         }
     }
+
+
+
+
+
     for (int x = 0; x < width; x++)
 	{
 		for (int y = 0; y < height; y++)

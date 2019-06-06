@@ -11,14 +11,15 @@ using namespace cimg_library;
 
 void help();
 int checkFile(const char* img);
-//dopytac Krzycha
+//done
 void slow_fourier(const char* img_name);
-//
+//done
 CImg<complex<double>>& make_fourier(CImg<complex<double>> original, int width, int height, bool inverse);
-//dopytac
+//ask
 void normalization(CImg<complex<double>> to_normalize, int width, int height);
-
+/toBeDone
 void fast_fourier(const char* img_name);
+//toBeDone
 CImg<complex<double>>& make_fast_fourier(CImg<complex<double>> original, int width, int height, bool inverse);
 CImg<complex<double>>& shift(CImg<complex<double>> to_shift, int width, int height);
 void pass_filter(const char* img_name, int radius, int option);
