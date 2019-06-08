@@ -4,15 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/source_files/RegionGrowing.cpp" "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/cmake-build-debug/CMakeFiles/Task3.dir/source_files/RegionGrowing.cpp.obj"
-  "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/source_files/functions.cpp" "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/cmake-build-debug/CMakeFiles/Task3.dir/source_files/functions.cpp.obj"
-  "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/source_files/main.cpp" "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task3/cmake-build-debug/CMakeFiles/Task3.dir/source_files/main.cpp.obj"
+  "/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/RegionGrowing.cpp" "/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/cmake-build-debug/CMakeFiles/Task3.dir/source_files/RegionGrowing.cpp.o"
+  "/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/functions.cpp" "/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/cmake-build-debug/CMakeFiles/Task3.dir/source_files/functions.cpp.o"
+  "/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/main.cpp" "/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/cmake-build-debug/CMakeFiles/Task3.dir/source_files/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../"
+  "/usr/local/include"
   )
 
 # Targets to which this target links.

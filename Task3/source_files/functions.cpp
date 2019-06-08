@@ -80,11 +80,12 @@ void erosion(const char* img_name)
     int mask[3][3] = {{0,0,0},{0,0,0},{0,0,0}}; //1 for white, 0 for black
 
 
+
    for(int y = 0; y < height; y++)
     {
         for(int x = 0; x < width; x++)
         {
-            //if coordinate are near the edge
+            //if pixels are near the edge do not change the values
             if(x==0||x==width-1||y==0||y==height-1)
             {
                 //replace pixels from original to eroded
@@ -92,11 +93,9 @@ void erosion(const char* img_name)
             }
             else
             {
-                //if given pixel is black and corresponds to given mask element
-                //check if we have got a pm,sm,nm
+                //if given pixel is black , same as central mask point
                 if(image_original(x, y)==mask[1][1])
                 {
-                    //cout<<"black"<<endl;
 
                     //checking 3X3 pixel mask and neighbourhood
                     for(int j = y-1, b = 0; j <= y+1; j++, b++)
@@ -104,33 +103,31 @@ void erosion(const char* img_name)
                         for(int i = x-1, a = 0; i <= x+1; i++, a++)
                         {
 
-                            //if pixel is white
-                            //partial match, no match that means that we turn black values into white
+                            //if at least one pixel is white/ not black then
+                            //we make them white in the second image
                             if(image_original(i, j)!=mask[1][1])
                             {
-                               // cout<<"white"<<endl;
                                 image_eroded(x, y) = 255;
+                                //we finish the loops
+
                                 i = x+2;
                                 j = y+2;
-                                //we finish the loops
 
 
                             }
                         }
-                        //if pixels are black
-                        if(j == y+1){ image_eroded(x, y) = image_original(x, y);k++;cout<<k<<endl;}
+                        //if loop was finished properly all pixels from the neighbourhood were black, cental pixel is black
+                        if(j == y+1){ image_eroded(x, y) = image_original(x, y);}
 
                     }
                 }
-                //if pixels are white just copy them
+                //if the minimum requirement is not met then just copy pixel from original image
                 else image_eroded(x, y) = image_original(x, y);
 
             }
         }
     }
     image_eroded.save("image_eroded.bmp");
-    cout<<"Murzyn"<<endl;
-
 }
 
 void erosion_task(const char* img_name, int option)
@@ -205,21 +202,31 @@ void dilation(const char* img_name)
     {
         for(int x = 0; x < width; x++)
         {
+            //if pixels are near the edge do not change the values
             if(x==0||x==width-1||y==0||y==height-1)
             {
+
+                //replace pixels from original to dilated
                 image_dilated(x, y) = image_original(x, y);
             }
             else
             {
+                //if given pixel is black , same as central mask point
                 if(image_original(x, y)==255 * mask[1][1])
                 {
+                    //checking 3X3 pixel mask and neighbourhood
                     for(int j = y-1, b = 0; j <= y+1; j++, b++)
                     {
                         for(int i = x-1, a = 0; i <= x+1; i++, a++)
                         {
+                           // if any pixel from 3x3 neighbourhood is equal to black , new dilated_pixel becomes blacks
                             if(mask[a][b] == mask[1][1]) image_dilated(i, j) = 255 * mask[a][b];
+                            cout<<i<<"::"<<j<<endl;
+
                         }
                     }
+
+                    cout<<"FINITO"<<endl;
                 }
                 else image_dilated(x, y) = image_original(x, y);
             }
@@ -533,13 +540,12 @@ void reggrow(const char* img_name, int threshold, int x, int y)
 {
 
     CImg<unsigned char> image(img_name);  //our image
-    int width = image.width();
-    int height = image.height();
-    int spectrum = image.spectrum();
+    const int width = image.width();
+   const int height = image.height();
+    const int spectrum = image.spectrum();
 
-    bool WasChecked[width][height] = {0};
+    bool WasChecked[512][512] = {0};
 
-    //tabela sprawdzen
 
     if(x>(height-1)||(x<0)||(y<0) ||y>(width-1))
     {
