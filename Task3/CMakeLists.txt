@@ -233,6 +233,6 @@ add_executable(Task3
        header_files/functions.h
 
 
-        header_files/RegionGrowing.h source_files/RegionGrowing.cpp)
+        header_files/RegionGrowing.h source_files/RegionGrowing.cpp source_files/RegionGrowing.cpp)
 
 target_link_libraries(Task3 ${SYSTEM_LIBS})

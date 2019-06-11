@@ -1,7 +1,9 @@
 #include <iostream>
 #include <cstdlib>
+#include <header_files/RegionGrowing.h>
 #include "header_files/functions.h"
 #include "header_files/CImg.h"
+
 
 using namespace std;
 using namespace cimg_library;
@@ -96,7 +98,9 @@ int main(int argc, char* argv[])
             int y = atoi(argv[5]);
 
             if ((strcmp(command, "--reggrow") == 0))
-            {reggrow(img,  threshold,  x,  y) ;}
+            {
+                applySegmentation(img, x,  y, threshold);
+            }
             else error();
 
         }

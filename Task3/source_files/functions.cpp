@@ -1,11 +1,14 @@
 #include <iostream>
 #include <stack>
 #include <cstdlib>
-#include "header_files/functions.h"
-#include "header_files/CImg.h"
 #include <algorithm>
 #include <fstream>
 #include <cmath>
+#include "header_files/functions.h"
+#include "header_files/CImg.h"
+#include "header_files/RegionGrowing.h"
+
+
 
 using namespace std;
 using namespace cimg_library;
@@ -536,32 +539,5 @@ void M2(const char* img_name)
 
 }
 
-void reggrow(const char* img_name, int threshold, int x, int y)
-{
-
-    CImg<unsigned char> image(img_name);  //our image
-    const int width = image.width();
-   const int height = image.height();
-    const int spectrum = image.spectrum();
-
-    bool WasChecked[512][512] = {0};
 
 
-    if(x>(height-1)||(x<0)||(y<0) ||y>(width-1))
-    {
-        cout<<"assign proper values"<<endl;
-    }
-
-
-
-
-    CImgDisplay main_disp(image, img_name);
-    while (!main_disp.is_closed())
-    {
-        main_disp.wait();
-    }
-    image.save("newOne.bmp");
-
-
-
-}
