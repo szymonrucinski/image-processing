@@ -118,6 +118,12 @@ CImg.h
 stdint.h
 -
 
+..//header_files/RegionGrowing.h
+header_files/CImg.h
+../header_files/header_files/CImg.h
+vector
+-
+
 ..//header_files/functions.h
 iostream
 -
@@ -236,10 +242,8 @@ CImg.h
 stdint.h
 -
 
-/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/functions.cpp
+/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/main.cpp
 iostream
--
-stack
 -
 cstdlib
 -
@@ -247,12 +251,8 @@ header_files/functions.h
 /Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/header_files/functions.h
 header_files/CImg.h
 /Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/header_files/CImg.h
-algorithm
--
-fstream
--
-cmath
--
+header_files/RegionGrowing.h
+/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/header_files/RegionGrowing.h
 
 /usr/local/include/X11/X.h
 X11/Xmd.h
@@ -331,6 +331,26 @@ X11/keysymdef.h
 -
 
 /usr/local/include/X11/keysymdef.h
+
+/usr/local/include/jconfig.h
+
+/usr/local/include/jerror.h
+
+/usr/local/include/jmorecfg.h
+
+/usr/local/include/jpeglib.h
+jconfig.h
+/usr/local/include/jconfig.h
+jmorecfg.h
+/usr/local/include/jmorecfg.h
+jpegint.h
+/usr/local/include/jpegint.h
+jerror.h
+/usr/local/include/jerror.h
+
+/usr/local/include/omp.h
+stdlib.h
+-
 
 /usr/local/include/png.h
 pnglibconf.h

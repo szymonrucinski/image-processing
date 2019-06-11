@@ -2,6 +2,8 @@
 #include <cstdlib>
 #include "header_files/functions.h"
 #include "header_files/CImg.h"
+#include "header_files/RegionGrowing.h"
+
 
 using namespace std;
 using namespace cimg_library;
@@ -88,15 +90,22 @@ int main(int argc, char* argv[])
 
         if ((strcmp(command, "--reggrow") == 0))
         {
+
             const char* img = argv[2];
             if (checkFile(img) == 0) return 0;
-            int threshold = atof(argv[3]);
+            int threshold = atof(argv[5]);
             if (threshold>255) threshold=255;
-            int x = atoi(argv[4]);
-            int y = atoi(argv[5]);
+            int x = atoi(argv[3]);
+            int y = atoi(argv[4]);
+            CImg<int>image1(img);
+            CImg<int>image2;
+
 
             if ((strcmp(command, "--reggrow") == 0))
-            {reggrow(img,  threshold,  x,  y) ;}
+            {image2=applySegmentationIterative(image1,x,y,threshold);
+                cout<<"working"<<endl;
+                image2.save("segmented.bmp");
+            }
             else error();
 
         }
