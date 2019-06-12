@@ -242,6 +242,26 @@ CImg.h
 stdint.h
 -
 
+/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/functions.cpp
+iostream
+-
+stack
+-
+cstdlib
+-
+header_files/functions.h
+/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/header_files/functions.h
+header_files/CImg.h
+/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/header_files/CImg.h
+algorithm
+-
+fstream
+-
+cmath
+-
+header_files/RegionGrowing.h
+-
+
 /Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/main.cpp
 iostream
 -

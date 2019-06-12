@@ -57,11 +57,6 @@ int main(int argc, char* argv[])
             HMT(img);
             display("image_processed.bmp");
         }
-        else if ((strcmp(command, "--HMT_task") == 0))
-        {
-            HMT_task(img);
-            display("image_processed.bmp");
-        }
         else if ((strcmp(command, "--M2") == 0))
         {
             M2(img);
@@ -69,19 +64,6 @@ int main(int argc, char* argv[])
         }
         else error();
     }
-
-    /*else if(argc == 4)
-    {
-        const char* command = argv[1];
-        const char* img = argv[2];
-        int option = atoi(argv[3]);
-        if (checkFile(img)==0) return 0;
-        else if ((strcmp(command, "--HMT_task") == 0))
-        {
-            HMT_task(img, option);
-            display("image_processed.bmp");
-        }
-    }*/
 
 
     else if (argc == 6)
@@ -102,7 +84,7 @@ int main(int argc, char* argv[])
 
 
             if ((strcmp(command, "--reggrow") == 0))
-            {image2=applySegmentationIterative(image1,x,y,threshold);
+            {image2=applySegmentation(image1,x,y,threshold);
                 cout<<"working"<<endl;
                 image2.save("segmented.bmp");
             }

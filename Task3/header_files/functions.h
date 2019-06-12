@@ -30,11 +30,6 @@ void M2(const char* img_name);
 CImg<int>& iterative_fun(CImg<int>* image_to_edition, CImg<int>* image_complement, CImg<int>* image_editted, int mask, int width, int height);
 CImg<int>& complement(const char* img_name);
 CImg<int>& dilation_to_fun(CImg<int>* image_original, int mask, int width, int height);
-/////////////////////////
-void HMT_task(const char* img_name);
 
-
-//UNNECESSARY
-void erosion_task(const char* img_name, int option);
 
 #endif
