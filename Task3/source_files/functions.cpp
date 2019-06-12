@@ -506,7 +506,7 @@ void segmentationRecursive(CImg<int> &original, CImg<int> &edited, int x, int y,
 }
 
 bool euclideanThreshold(CImg<int> &original, int threshold, int x1, int y1, int x2, int y2){
-    //calculate pixel value based of Eudlidean distance with respect to seed;
+    //calculate pixel value based of Eucdlidean distance with respect to seed;
     int distance = sqrt(
             (original(x2, y2, 0, 0) - original(x1, y1, 0, 0)) * (original(x2, y2, 0, 0) - original(x1, y1, 0, 0)) +
             (original(x2, y2, 0, 1) - original(x1, y1, 0, 1)) * (original(x2, y2, 0, 1) - original(x1, y1, 0, 1)) +
