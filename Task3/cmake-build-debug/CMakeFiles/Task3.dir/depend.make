@@ -41,6 +41,7 @@ CMakeFiles/Task3.dir/source_files/main.cpp.o: ../header_files/RegionGrowing.h
 CMakeFiles/Task3.dir/source_files/main.cpp.o: ../header_files/functions.h
 CMakeFiles/Task3.dir/source_files/main.cpp.o: ../header_files/CImg.h
 CMakeFiles/Task3.dir/source_files/main.cpp.o: ../source_files/main.cpp
+CMakeFiles/Task3.dir/source_files/main.cpp.o: /opt/X11/include/X11/Xlib.h
 CMakeFiles/Task3.dir/source_files/main.cpp.o: /usr/local/include/X11/X.h
 CMakeFiles/Task3.dir/source_files/main.cpp.o: /usr/local/include/X11/Xdefs.h
 CMakeFiles/Task3.dir/source_files/main.cpp.o: /usr/local/include/X11/Xfuncproto.h

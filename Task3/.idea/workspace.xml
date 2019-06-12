@@ -12,7 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9416d8fb-7d82-4cc9-b867-4606d81ca98a" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/source_files/functions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source_files/functions.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source_files/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source_files/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -36,11 +36,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source_files/functions.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="251">
-              <caret line="364" column="7" selection-start-line="364" selection-start-column="5" selection-end-line="364" selection-end-column="7" />
+            <state relative-caret-position="208">
+              <caret line="49" column="15" selection-start-line="49" selection-end-line="50" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -51,8 +51,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source_files/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="324">
-              <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
+            <state relative-caret-position="172">
+              <caret line="90" selection-start-line="90" selection-end-line="90" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
               </folding>
@@ -60,7 +60,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/header_files/functions.h">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="266">
@@ -76,8 +76,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>IP_</find>
-      <find>Task</find>
       <find>mean</find>
       <find>flaco</find>
       <find>casyco</find>
@@ -105,6 +103,8 @@
       <find>PIXEL</find>
       <find>htm</find>
       <find>edited</find>
+      <find>M2</find>
+      <find>display</find>
       <find>image2</find>
     </findStrings>
   </component>
@@ -125,8 +125,8 @@
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/header_files/RegionGrowing.h" />
         <option value="$PROJECT_DIR$/header_files/functions.h" />
-        <option value="$PROJECT_DIR$/source_files/main.cpp" />
         <option value="$PROJECT_DIR$/source_files/functions.cpp" />
+        <option value="$PROJECT_DIR$/source_files/main.cpp" />
       </list>
     </option>
   </component>
@@ -223,7 +223,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Messages" order="7" weight="0.32771084" />
+      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.32771084" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
@@ -323,16 +323,6 @@
     <entry file="file://$PROJECT_DIR$/IMAGES/test.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/header_files/functions.h">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
-          <folding>
-            <element signature="e#41#60#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/IMAGES/lenac.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
@@ -349,22 +339,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source_files/main.cpp">
+    <entry file="file://$PROJECT_DIR$/source_files/functions.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="82" column="28" selection-start-line="82" selection-start-column="28" selection-end-line="82" selection-end-column="28" />
+        <state relative-caret-position="208">
+          <caret line="49" column="15" selection-start-line="49" selection-end-line="50" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source_files/functions.cpp">
+    <entry file="file://$PROJECT_DIR$/source_files/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="251">
-          <caret line="364" column="7" selection-start-line="364" selection-start-column="5" selection-end-line="364" selection-end-column="7" />
+        <state relative-caret-position="172">
+          <caret line="90" selection-start-line="90" selection-end-line="90" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/header_files/functions.h">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="266">
+          <caret line="26" selection-start-line="26" selection-end-line="26" />
+          <folding>
+            <element signature="e#41#60#0" expanded="true" />
           </folding>
         </state>
       </provider>

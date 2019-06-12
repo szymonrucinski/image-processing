@@ -3,6 +3,7 @@
 #include "header_files/functions.h"
 #include "header_files/CImg.h"
 #include "header_files/RegionGrowing.h"
+#include </opt/X11/include/X11/Xlib.h>
 
 
 using namespace std;
@@ -87,6 +88,7 @@ int main(int argc, char* argv[])
             {image2=applySegmentation(image1,x,y,threshold);
                 cout<<"working"<<endl;
                 image2.save("segmented.bmp");
+
             }
             else error();
 
