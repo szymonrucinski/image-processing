@@ -12,6 +12,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9416d8fb-7d82-4cc9-b867-4606d81ca98a" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/IMAGES/binar.bmp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Task3.dir/CXX.includecache" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Task3.dir/CXX.includecache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Task3.dir/depend.internal" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Task3.dir/depend.internal" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Task3.dir/depend.make" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/CMakeFiles/Task3.dir/depend.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/cmake-build-debug/Task3.cbp" beforeDir="false" afterPath="$PROJECT_DIR$/cmake-build-debug/Task3.cbp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/header_files/functions.h" beforeDir="false" afterPath="$PROJECT_DIR$/header_files/functions.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source_files/functions.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source_files/functions.cpp" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/source_files/main.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/source_files/main.cpp" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/cmake-build-debug/" />
@@ -21,52 +30,41 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/header_files/RegionGrowing.h">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/source_files/functions.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" column="1" selection-start-line="19" selection-start-column="1" selection-end-line="19" selection-end-column="1" />
+            <state relative-caret-position="176">
+              <caret line="366" column="7" selection-start-line="366" selection-start-column="5" selection-end-line="366" selection-end-column="7" />
               <folding>
-                <element signature="e#34#64#0" expanded="true" />
+                <element signature="e#0#19#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/source_files/functions.cpp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="208">
-              <caret line="49" column="15" selection-start-line="49" selection-end-line="50" />
-              <folding>
-                <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
+        <entry file="file://$PROJECT_DIR$/IMAGES/F5test1.bmp">
+          <provider selected="true" editor-type-id="images" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/IMAGES/binar.bmp">
+          <provider selected="true" editor-type-id="images" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/source_files/main.cpp">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="90" selection-start-line="90" selection-end-line="90" />
+            <state relative-caret-position="160">
+              <caret line="67" selection-start-line="67" selection-end-line="67" />
               <folding>
                 <element signature="e#0#19#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/header_files/functions.h">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="266">
-              <caret line="26" selection-start-line="26" selection-end-line="26" />
-              <folding>
-                <element signature="e#41#60#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -76,11 +74,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>mean</find>
-      <find>flaco</find>
-      <find>casyco</find>
-      <find>z</find>
-      <find>histogram</find>
       <find>Rale</find>
       <find>check_coo</find>
       <find>check</find>
@@ -99,13 +92,18 @@
       <find>erosion</find>
       <find>dilation</find>
       <find>apply</find>
-      <find>hmt</find>
       <find>PIXEL</find>
       <find>htm</find>
       <find>edited</find>
       <find>M2</find>
-      <find>display</find>
       <find>image2</find>
+      <find>display</find>
+      <find>EROSION</find>
+      <find>HMT</find>
+      <find>char const*</find>
+      <find>hmtMask1</find>
+      <find>HMTmasks</find>
+      <find>hmt</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -124,13 +122,14 @@
         <option value="$PROJECT_DIR$/source_files/function.cpp" />
         <option value="$PROJECT_DIR$/CMakeLists.txt" />
         <option value="$PROJECT_DIR$/header_files/RegionGrowing.h" />
+        <option value="$PROJECT_DIR$/header_files/Masks.h" />
         <option value="$PROJECT_DIR$/header_files/functions.h" />
         <option value="$PROJECT_DIR$/source_files/functions.cpp" />
         <option value="$PROJECT_DIR$/source_files/main.cpp" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
+  <component name="ProjectFrameBounds" fullScreen="true">
     <option name="width" value="714" />
     <option name="height" value="900" />
   </component>
@@ -140,7 +139,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -151,16 +149,18 @@
             <path>
               <item name="Task3" type="b2602c69:ProjectViewProjectNode" />
               <item name="Task3" type="462c0819:PsiDirectoryNode" />
-              <item name="header_files" type="462c0819:PsiDirectoryNode" />
+              <item name="IMAGES" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/CMakeLists.txt" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -198,7 +198,7 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Task3" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--reggrow IMAGES/lenac.bmp 256 200 150" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Task3" TARGET_NAME="Task3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Task3" RUN_TARGET_NAME="Task3">
+    <configuration name="Task3" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="--HMT IMAGES/binar.bmp 4" PASS_PARENT_ENVS_2="true" PROJECT_NAME="Task3" TARGET_NAME="Task3" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="Task3" RUN_TARGET_NAME="Task3">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -210,20 +210,20 @@
     </list>
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1440" height="900" extended-state="6" />
+    <frame x="0" y="0" width="1440" height="900" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19097957" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19097957" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info anchor="bottom" id="Run" order="2" weight="0.3180723" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3566265" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info active="true" anchor="bottom" id="Messages" order="7" visible="true" weight="0.32771084" />
+      <window_info anchor="bottom" id="Messages" order="7" weight="0.32771084" />
       <window_info anchor="bottom" id="Terminal" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Version Control" order="10" show_stripe_button="false" />
@@ -311,24 +311,18 @@
     <entry file="file://$PROJECT_DIR$/IMAGES/lena.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/IMAGES/F5test1.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/IMAGES/ImageTest.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/image_dilated.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/image_dilated.bmp" />
     <entry file="file://$PROJECT_DIR$/IMAGES/test.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/IMAGES/lenac.bmp">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/segmented.bmp">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/image_processed.bmp" />
+    <entry file="file://$PROJECT_DIR$/segmented.bmp" />
     <entry file="file://$PROJECT_DIR$/header_files/RegionGrowing.h">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -339,32 +333,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/source_files/functions.cpp">
+    <entry file="file://$PROJECT_DIR$/image_edited2.bmp" />
+    <entry file="file://$PROJECT_DIR$/header_files/Masks.h" />
+    <entry file="file://$PROJECT_DIR$/header_files/functions.h">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="208">
-          <caret line="49" column="15" selection-start-line="49" selection-end-line="50" />
+        <state relative-caret-position="376">
+          <caret line="33" selection-start-line="33" selection-end-line="33" />
           <folding>
-            <element signature="e#0#19#0" expanded="true" />
+            <element signature="e#41#60#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file:///Library/Developer/CommandLineTools/usr/include/c++/v1/memory">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="15">
+          <caret line="3027" selection-start-line="3027" selection-end-line="3027" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/source_files/main.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="90" selection-start-line="90" selection-end-line="90" />
+        <state relative-caret-position="160">
+          <caret line="67" selection-start-line="67" selection-end-line="67" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/header_files/functions.h">
+    <entry file="file://$PROJECT_DIR$/IMAGES/hmtest.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/HMT.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IMAGES/binar.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/IMAGES/F5test1.bmp">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/source_files/functions.cpp">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="266">
-          <caret line="26" selection-start-line="26" selection-end-line="26" />
+        <state relative-caret-position="176">
+          <caret line="366" column="7" selection-start-line="366" selection-start-column="5" selection-end-line="366" selection-end-column="7" />
           <folding>
-            <element signature="e#41#60#0" expanded="true" />
+            <element signature="e#0#19#0" expanded="true" />
           </folding>
         </state>
       </provider>

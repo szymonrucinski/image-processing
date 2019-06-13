@@ -1,10 +1,8 @@
 #include <iostream>
 #include <cstdlib>
-#include "header_files/functions.h"
 #include "header_files/CImg.h"
 #include "header_files/RegionGrowing.h"
-#include </opt/X11/include/X11/Xlib.h>
-
+#include "header_files/functions.h"
 
 using namespace std;
 using namespace cimg_library;
@@ -32,6 +30,7 @@ int main(int argc, char* argv[])
     {
         const char* command = argv[1];
         const char* img = argv[2];
+
         if (checkFile(img)==0) return 0;
         if ((strcmp(command, "--dilation") == 0))
         {
@@ -53,11 +52,7 @@ int main(int argc, char* argv[])
             closing(img);
             display("image_eroded.bmp");
         }
-        else if ((strcmp(command, "--HMT") == 0))
-        {
-            HMT(img);
-            display("image_processed.bmp");
-        }
+
         else if ((strcmp(command, "--M2") == 0))
         {
             M2(img);
@@ -66,8 +61,20 @@ int main(int argc, char* argv[])
         else error();
     }
 
+    else if(argc==4) {
+        const char *command = argv[1];
+        const char *img = argv[2];
+        int mask = atof(argv[3]);
 
-    else if (argc == 6)
+         if ((strcmp(command, "--HMT") == 0))
+        {
+            HMT(img,mask);
+        }
+    }
+
+
+
+        else if (argc == 6)
     {
         const char* command = argv[1];
 

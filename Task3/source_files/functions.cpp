@@ -10,22 +10,33 @@
 
 using namespace std;
 using namespace cimg_library;
-
 int mask1[3][3] = {{1,1,1},{1,0,0},{1,1,1}};
 int mask2[3][3] = {{1,1,1},{1,0,1},{1,0,1}};
 int mask3[3][3] = {{1,1,1},{1,1,1},{1,1,1}};
-int mask4[3][3] = {{1,0,1},{0,0,0},{1,0,1}};
-int mask41[3][3] = {{0,1,0},{1,1,1},{0,1,0}};
-int mask5[3][3] = {{1,1,1},{1,0,0},{1,0,1}};
-int mask6[3][3] = {{1,1,1},{1,1,0},{1,0,1}};
-int mask7[3][3] = {{1,1,1},{0,0,0},{1,1,1}};
-int mask8[3][3] = {{1,1,1},{0,1,0},{1,1,1}};
-int mask9[3][3] = {{1,1,1},{0,0,1},{0,1,1}};
-int mask10[3][3] = {{1,0,0},{1,0,1},{1,1,1}};
-int mask11[4][3][3] = {{{0,2,2},{0,1,2},{0,2,2}},{{0,0,0},{2,1,2},{2,2,2}},
-                       {{2,2,0},{2,1,0},{2,2,0}},{{2,2,2},{2,1,2},{0,0,0}}}; // 0 for black, 1 for white, 2 for inactive
-int maskB1[3][3] = {{1,0,0},{1,0,0},{1,0,0}};
-int maskB2[3][3] = {{0,1,1},{0,1,1},{0,1,1}};
+
+int HMTmasks[4][3][3] = {
+        {
+                {0,   5,   5},
+                {0,   255, 5},
+                {0,   5,   5}
+        },
+        {
+                {0,   0,   0},
+                {5, 255,   5},
+                {5,   5,   5}
+        },
+        {
+                {5,   5,   0},
+                {5,   255, 0},
+                {5,   5,   0}
+        },
+        {
+                {5,   5,   5},
+                {5,   255, 5},
+                {0,   0,   0}
+        },
+
+};
 
 void help()
 {
@@ -105,7 +116,7 @@ void erosion(const char* img_name)
                         {
 
                             //if at least one pixel is white/ not black then
-                            //we make them white in the second image
+                            //we copy them white in the second image
                             if(image_original(i, j)!=mask[1][1])
                             {
                                 image_eroded(x, y) = 255;
@@ -231,54 +242,45 @@ void closing(const char* img_name)
     erosion("image_dilated.bmp");
 }
 
-void HMT(const char* img_name)
+void HMT(const char *name, int mask)
 {
-    CImg<unsigned char> image_original(img_name);
-    int height = image_original.height();
-    int width = image_original.width();
-    CImg<unsigned char> image_processed(height, width);
-    for(int y = 0; y < height; y++)
-    {
-        for(int x = 0; x < width; x++)
+
+        CImg<int> image(name);
+        CImg<double> result = image;
+
+        for (int i = 1; i < image.width() - 1; i++)
         {
-            if(x==0||x==width-1||y==0||y==height-1)
+            for (int j = 1; j < image.height() - 1; j++)
             {
-                image_processed(x, y) = image_original(x, y);
-            }
-            else
-            {
-                if(mask11[0][1][1]*255 == image_original(x, y)) //because every mask has the same color of middle pixel
+                for (int k = 0; k < image.spectrum(); k++)
                 {
-                    for(int masknr = 0; masknr < 4; masknr++)
+                    bool test = true;
+                    for (int y = -1; y <= 1; y++)
                     {
-                        for(int j = y-1, b = 0; j <= y+1; j++, b++)
+                        for (int x = -1; x <= 1; x++)
                         {
-                            for(int i = x-1, a = 0; i <= x+1; i++, a++)
+                            //checking if part of the mask is active 0 or 255
+                            if (HMTmasks[mask][x + 1][y + 1] != 5)
                             {
-                                if(mask11[masknr][a][b] == 2) continue;
-                                if(mask11[masknr][a][b] * 255 != image_original(i, j))
-                                {
-                                    if(masknr == 3)
-                                    {
-                                        image_processed(x, y) = abs(1 - mask11[0][1][1]) * 255;
-                                    }
-                                    i = x+2;
-                                    j = y+2;
-                                }
-                                if(a == 2&& b == 2 && mask11[masknr][a][b] * 255 == image_original(i, j))
-                                {
-                                    image_processed(x, y) = mask11[0][1][1] * 255;
-                                    masknr = 4;
-                                }
+
+                                //if at least one of values of the image that masked was placed on is different
+                                if (image(i + x, j + y, k) != HMTmasks[mask][x + 1][y + 1])
+                                    test = false;
+
                             }
                         }
                     }
+
+                    if (test)
+                        result(i, j, k) = 0;
+                    else
+                        result(i, j, k) = 255;
                 }
-                else image_processed(x, y) = image_original(x, y);
             }
         }
-    }
-    image_processed.save("image_processed.bmp");
+
+
+     result.save("HMT.bmp");
 }
 
 
