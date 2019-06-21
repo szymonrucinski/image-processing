@@ -1,3 +1,1 @@
-"C:\Program Files\JetBrains\CLion 2018.2.6\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\Task4.dir/objects.a
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\ar.exe cr CMakeFiles\Task4.dir/objects.a @CMakeFiles\Task4.dir\objects1.rsp
-C:\PROGRA~1\MINGW-~1\X86_64~1.0-P\mingw64\bin\G__~1.EXE   -g   -Wl,--whole-archive CMakeFiles\Task4.dir/objects.a -Wl,--no-whole-archive  -o ..\Task4.exe -Wl,--out-implib,..\libTask4.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\Task4.dir\linklibs.rsp
+/usr/bin/g++    -g -isysroot /Library/Developer/CommandLineTools/SDKs/MacOSX10.14.sdk -Wl,-search_paths_first -Wl,-headerpad_max_install_names  CMakeFiles/Task4.dir/source_files/main.cpp.o CMakeFiles/Task4.dir/source_files/functions.cpp.o CMakeFiles/Task4.dir/source_files/Fourier.cpp.o  -o ../Task4 /usr/X11R6/lib/libSM.dylib /usr/X11R6/lib/libICE.dylib /usr/X11R6/lib/libX11.dylib /usr/X11R6/lib/libXext.dylib 

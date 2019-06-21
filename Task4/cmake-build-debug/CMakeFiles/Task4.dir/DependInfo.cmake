@@ -4,15 +4,16 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/source_files/Fourier.cpp" "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/cmake-build-debug/CMakeFiles/Task4.dir/source_files/Fourier.cpp.obj"
-  "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/source_files/functions.cpp" "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/cmake-build-debug/CMakeFiles/Task4.dir/source_files/functions.cpp.obj"
-  "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/source_files/main.cpp" "C:/Users/Szymon/Desktop/Poprawka_Image_Processing/Task4/cmake-build-debug/CMakeFiles/Task4.dir/source_files/main.cpp.obj"
+  "/Users/szymonrucinski/Documents/Pliki/Studia/ImageProcessing/Poprawka_Image_Processing/Task4/source_files/Fourier.cpp" "/Users/szymonrucinski/Documents/Pliki/Studia/ImageProcessing/Poprawka_Image_Processing/Task4/cmake-build-debug/CMakeFiles/Task4.dir/source_files/Fourier.cpp.o"
+  "/Users/szymonrucinski/Documents/Pliki/Studia/ImageProcessing/Poprawka_Image_Processing/Task4/source_files/functions.cpp" "/Users/szymonrucinski/Documents/Pliki/Studia/ImageProcessing/Poprawka_Image_Processing/Task4/cmake-build-debug/CMakeFiles/Task4.dir/source_files/functions.cpp.o"
+  "/Users/szymonrucinski/Documents/Pliki/Studia/ImageProcessing/Poprawka_Image_Processing/Task4/source_files/main.cpp" "/Users/szymonrucinski/Documents/Pliki/Studia/ImageProcessing/Poprawka_Image_Processing/Task4/cmake-build-debug/CMakeFiles/Task4.dir/source_files/main.cpp.o"
   )
-set(CMAKE_CXX_COMPILER_ID "GNU")
+set(CMAKE_CXX_COMPILER_ID "AppleClang")
 
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
   "../"
+  "/usr/local/include"
   )
 
 # Targets to which this target links.

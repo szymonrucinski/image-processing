@@ -1,11 +1,9 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/Task4.dir/source_files/main.cpp.obj"
-  "CMakeFiles/Task4.dir/source_files/functions.cpp.obj"
-  "CMakeFiles/Task4.dir/source_files/Fourier.cpp.obj"
+  "CMakeFiles/Task4.dir/source_files/main.cpp.o"
+  "CMakeFiles/Task4.dir/source_files/functions.cpp.o"
+  "CMakeFiles/Task4.dir/source_files/Fourier.cpp.o"
   "../Task4.pdb"
-  "../Task4.exe"
-  "../Task4.exe.manifest"
-  "../libTask4.dll.a"
+  "../Task4"
 )
 
 # Per-language clean rules from dependency scanning.
