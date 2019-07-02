@@ -1,10 +1,6 @@
 #include <iostream>
 #include <cstdlib>
-<<<<<<< HEAD
-#include <header_files/RegionGrowing.h>
-#include "header_files/functions.h"
-=======
->>>>>>> dev
+
 #include "header_files/CImg.h"
 #include "header_files/RegionGrowing.h"
 #include "header_files/functions.h"
