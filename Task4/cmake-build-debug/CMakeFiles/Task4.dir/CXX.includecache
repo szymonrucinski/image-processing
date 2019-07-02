@@ -258,16 +258,6 @@ fstream
 vector
 -
 
-/Users/szymonrucinski/Documents/Pliki/Studia/ImageProcessing/Poprawka_Image_Processing/Task4/source_files/main.cpp
-iostream
--
-cstdlib
--
-header_files/functions.h
-/Users/szymonrucinski/Documents/Pliki/Studia/ImageProcessing/Poprawka_Image_Processing/Task4/source_files/header_files/functions.h
-header_files/CImg.h
-/Users/szymonrucinski/Documents/Pliki/Studia/ImageProcessing/Poprawka_Image_Processing/Task4/source_files/header_files/CImg.h
-
 /usr/local/include/X11/X.h
 X11/Xmd.h
 -

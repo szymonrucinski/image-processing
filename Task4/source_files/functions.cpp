@@ -15,7 +15,8 @@ vector<vector<complex<double>>> swap1;
 
 double PI = atan(1)*4;
 
-CImg<double> dft(const char *name)
+//direct fourier
+CImg<double> dft(char *name)
 {
     CImg<double> image(name);
     CImg<double> final = image;
@@ -27,7 +28,6 @@ CImg<double> dft(const char *name)
         vector<complex<double>> row(image.width());
         //move to 'first'
         first.push_back(row);
-
         for (int q = 0; q < image.width(); q++)
         {
             complex<double> sum = (0., 0.);
@@ -41,13 +41,14 @@ CImg<double> dft(const char *name)
     }
 
     long int sum=0;
-    cout<<first.size()<<endl;
 
-    for(int i =0;i<512;i++)
-    {
-        sum=sum+first[i].size();
-    }
-    cout <<sum<<endl;
+//    cout<<first.size()<<endl;
+//
+//    for(int i =0;i<512;i++)
+//    {
+//        sum=sum+first[i].size();
+//    }
+//    cout <<sum<<endl;
 
 
     for (int p = 0; p < image.width(); p++)
@@ -88,12 +89,12 @@ CImg<double> dft(const char *name)
             swap1[j][i] = second[b][a];
             if (j == image.height() - 1) j = -1;
             b++;
-            cout<<"B:"<<b<<endl;
+           // cout<<"B:"<<b<<endl;
         }
         if (i == image.width() - 1) i = -1;
         b = 0;
         a++;
-        cout<<"A:"<<b<<endl;
+       // cout<<"A:"<<b<<endl;
 
     }
 
@@ -113,7 +114,9 @@ CImg<double> dft(const char *name)
     return final;
 }
 
-CImg<double> idft(const char *name)
+//Inverse direcet fourier
+
+CImg<double> idft(char *name)
 {
     CImg<double> image(name);
     CImg<double> final = image;
@@ -150,6 +153,8 @@ CImg<double> idft(const char *name)
     }
     return final;
 }
+
+
 vector<complex<double>> part(vector<complex<double>> &row, bool inverse)
 {
     int N = row.size();
@@ -186,7 +191,10 @@ vector<complex<double>> part(vector<complex<double>> &row, bool inverse)
     return row;
 }
 
-CImg<double> fft(const char *name)
+
+//fast fourier
+
+CImg<double> fft(  char *name)
 {
 
     CImg<double> image(name);
@@ -248,9 +256,256 @@ CImg<double> fft(const char *name)
     return final;
 }
 
+CImg<double> lowpass(  char *name, int threshold)
+{
+    CImg<double> image(name);
+    for (int p = 0; p < image.width(); p++)
+    {
+        for (int q = 0; q < image.height(); q++)
+        {
+            double d = sqrt((pow(p - (image.width() / 2), 2) + pow(q - (image.height() / 2), 2)));
+            if (d > threshold)
+            {
+                second[q][p] = (0., 0.);
+            }
+        }
+    }
+
+    for (int i = 0; i < image.width(); i++)
+    {
+        for (int j = 0; j < image.height(); j++)
+        {
+            for (int k = 0; k < image.spectrum(); k++)
+            {
+                image(i, j, 0, k) = log(abs(second[j][i])) * 15.;
+            }
+        }
+    }
+
+    image.display();
+    return image;
+}
+
+CImg<double> highpass(char *name, int threshold)
+{
+    CImg<double> image(name);
+    for (int p = 0; p < image.width(); p++)
+    {
+        for (int q = 0; q < image.height(); q++)
+        {
+            double d = sqrt((pow(p - (image.width() / 2), 2) + pow(q - (image.height() / 2), 2)));
+            if (d <= threshold)
+            {
+                second[q][p] = (0., 0.);
+            }
+        }
+    }
+
+
+//    for (int i = 0; i < image.width(); i++)
+//    {
+//        for (int j = 0; j < image.height(); j++)
+//        {
+//            for(int k=0;k<image.spectrum();k++)
+//            {
+//                image(i, j, 0, k) = log(abs(second[j][i]))*15.;
+//            }
+//        }
+//    }
+//
+//    image.display();
+    return image;
+}
+
+CImg<double> bandpass(char *name, int threshold, int bandwidth)
+{
+    CImg<double> image(name);
+
+    for (int i = 0; i < image.width(); i++)
+    {
+        for (int j = 0; j < image.height(); j++)
+        {
+            double d = sqrt((pow(i - (image.width() / 2), 2) + pow(j - (image.height() / 2), 2)));
+            if (d < (threshold - bandwidth / 2) || d > (threshold + bandwidth / 2))
+            {
+                second[j][i] = (0., 0.);
+            }
+        }
+    }
+
+    for (int w = 0; w < image.width(); w++)
+    {
+        for (int z = 0; z < image.height(); z++)
+        {
+            for (int k = 0; k < image.spectrum(); k++)
+            {
+                image(w, z, 0, k) = log(abs(second[z][w])) * 15.;
+            }
+        }
+    }
+
+    image.display();
+    return image;
+}
+
+CImg<double> bandcut(char *name, int threshold, int bandwidth)
+{
+    CImg<double> image(name);
+    for (int i = 0; i < image.width(); i++)
+    {
+        for (int j = 0; j < image.height(); j++)
+        {
+            double d = sqrt((pow(i - (image.width() / 2), 2) + pow(j - (image.height() / 2), 2)));
+            if (d >= (threshold - bandwidth / 2) && d <= (threshold + bandwidth / 2))
+            {
+                second[j][i] = (0., 0.);
+            }
+        }
+    }
+
+    for (int w = 0; w < image.width(); w++)
+    {
+        for (int z = 0; z < image.height(); z++)
+        {
+            for (int k = 0; k < image.spectrum(); k++)
+            {
+                image(w, z, 0, k) = log(abs(second[z][w])) * 15.;
+            }
+        }
+    }
+
+    return image;
+}
 
 
 
+
+
+CImg<double> ifft(char *name)
+{
+    CImg<double> image(name);
+    CImg<double> final = image;
+
+    int width = image.width();
+    int height = image.height();
+
+    for (int p = 0; p < height; p++)
+    {
+        vector<complex<double>> row(width);
+        vector<complex<double>> temp;
+        for (int i = 0; i < width; i++)
+        {
+            row[i] = second[p][i];
+        }
+        temp = part(row, true);
+        for(int x=0;x<width;x++)
+        {
+            first[p][x] = temp[x]/(double)width;
+        }
+
+    }
+
+    for (int p = 0; p < image.width(); p++)
+    {
+        vector<complex<double>> row(height);
+        vector<complex<double>> temp = row;
+        for (int i = 0; i < height; i++)
+        {
+            row[i] = first[i][p];
+        }
+        temp = part(row, true);
+        for (int i = 0; i < height; i++)
+        {
+            for (int s = 0; s < image.spectrum(); s++)
+            {
+                final(i, p, s) = (double)abs(temp[i])/(double)height;
+            }
+        }
+    }
+
+//    final.display();
+    return final;
+}
+
+CImg<double> pmod(char *name, int l, int k)
+{
+    CImg<double> image(name);
+    for (int i = 0; i < image.width(); i++)
+    {
+        for (int j = 0; j < image.height(); j++)
+        {
+            complex<double> temp(
+                    cos((-2 * M_PI * k * i) / image.width() + (-2 * M_PI * l * j) / image.height() + (k + l) * M_PI),
+                    sin((-2 * M_PI * k * i) / image.width() + (-2 * M_PI * l * j) / image.height() + (k + l) * M_PI));
+            second[j][i] *= temp;
+        }
+    }
+
+    for (int w = 0; w < image.width(); w++)
+    {
+        for (int z = 0; z < image.height(); z++)
+        {
+            for (int k = 0; k < image.spectrum(); k++)
+            {
+                image(w, z, 0, k) = abs(second[z][w]);
+            }
+        }
+    }
+
+    //image.display();
+    return image;
+}
+
+CImg<double> highpassedgedet(char *name,  char *name2)
+{
+    CImg<double> image(name);
+    CImg<double> mask(name2);
+    for (int p = 0; p < image.width(); p++)
+    {
+        for (int q = 0; q < image.height(); q++)
+        {
+            if (mask(p, q) == 0)
+            {
+                second[q][image.width() - p - 1] = (0., 0.);
+            }
+        }
+    }
+
+//    image.display();
+    return image;
+}
+
+CImg<double> highpassedgedetmask(char *name, float a, float b, float r)
+{
+    CImg<double> image(name);
+    float alpha = (-a)/(180.0/3.141592653589793238463);
+    float beta = (-b)/(180.0/3.141592653589793238463);
+
+    for (int i = 0; i < image.width(); i++)
+    {
+        for (int j = 0; j < image.height(); j++)
+        {
+            float temp = ((float)(j - image.height()/2)/(float)(i - image.width()/2));
+            if (((temp < tan(alpha+beta)) || (temp > tan(alpha-beta))) || sqrt(pow(i - image.width()/2, 2) + pow(j - image.height()/2, 2)) < r)
+            {
+                second[j][image.width() - i - 1] = (0., 0.);
+            }
+        }
+    }
+    for (int i = 0; i < image.width(); i++)
+    {
+        for (int j = 0; j < image.height(); j++)
+        {
+            for(int k=0;k<image.spectrum();k++)
+            {
+                image(i, j, 0, k) = log(abs(second[j][image.width() - i - 1]))*15.;
+            }
+        }
+    }
+
+    image.display();
+    return image;
+}
 
 
 

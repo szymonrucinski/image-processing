@@ -6,6 +6,9 @@
 using namespace std;
 using namespace cimg_library;
 
+
+
+
 void save(CImg<unsigned char> image, const char *name, const char *suffix)
 {
     char result[25];
@@ -17,111 +20,107 @@ void save(CImg<unsigned char> image, const char *name, const char *suffix)
     image.save(result);
 }
 
-int main(int argc, char* argv[])
+
+int main(int argc, char *argv[])
 {
 
-    if(argc<2)
-   {
-       cout << "There is no argument!" << endl;
-       return 0;
-   }
-   else if(argc==2)
-   {
-       if(strcmp(argv[1], "--help") == 0)
-       {
-           //help();
-           return 0;
-       }
-        else
+    char *name;
+    string command;
+    name = argv[2];
+    command = argv[1];
+
+        cimg::exception_mode(0);
+        try
         {
-            cout<< "There is not enough arguments!" << endl;
+
+
+             if (command == "--dft")
+            {
+                clock_t start, end;
+                start = clock();
+                save(dft(name), name, "_dft.bmp");
+                end = clock();
+                double duration_sec = double(end - start) / CLOCKS_PER_SEC;
+                cout << "The operation took " << duration_sec << " seconds.";
+            }
+            else if (command == "--fft")
+            {
+                clock_t start, end;
+                start = clock();
+                save(fft(name), name, "_fft.bmp");
+                end = clock();
+                double duration_sec = double(end - start) / CLOCKS_PER_SEC;
+                cout << "The operation took " << duration_sec << " seconds.";
+            }
+            else if (command == "--idft")
+            {
+                clock_t start, end;
+                start = clock();
+                dft(name);
+                save(idft(name), name, "_idft.bmp");
+                end = clock();
+                double duration_sec = double(end - start) / CLOCKS_PER_SEC;
+                cout << "The operation took " << duration_sec << " seconds.";
+            }
+            else if(command == "--ifft")
+            {
+                clock_t start, end;
+                start = clock();
+                fft(name);
+                save(ifft(name), name, "_ifft.bmp");
+                end = clock();
+                double duration_sec = double(end - start) / CLOCKS_PER_SEC;
+                cout << "The operation took " << duration_sec << " seconds.";
+            }
+            else if (command == "--lowp")
+            {
+                fft(name);
+                lowpass(name, atoi(argv[3]));
+                save(ifft(name), name, "_lowp.bmp");
+            }
+            else if (command == "--highp")
+            {
+                fft(name);
+                highpass(name, atoi(argv[3]));
+                save(ifft(name), name, "_highp.bmp");
+            }
+            else if (command == "--bpass")
+            {
+                fft(name);
+                bandpass(name, atoi(argv[3]), atoi(argv[4]));
+                save(ifft(name), name, "_bpass.bmp");
+            }
+            else if (command == "--bcut")
+            {
+                fft(name);
+                bandcut(name, atoi(argv[3]), atoi(argv[4]));
+                save(ifft(name), name, "_bcut.bmp");
+            }
+            else if (command == "--pmod")
+            {
+                fft(name);
+                pmod(name, atoi(argv[3]), atoi(argv[4]));
+                save(ifft(name), name, "_pmod.bmp");
+            }
+            else if (command == "--hpassed")
+            {
+                fft(name);
+                highpassedgedet(name, argv[3]);
+                save(ifft(name), name, "_hpassed.bmp");
+            }
+            else if (command == "--hpassedm")
+            {
+                fft(name);
+                save(highpassedgedetmask(name, atof(argv[3]), atof(argv[4]), atof(argv[5])), name, "_hpassedmask.bmp");
+                save(ifft(name), name, "_hpassedm.bmp");
+            }
+            else cout << "No such function, try --help\n";
+        }
+
+        catch (CImgIOException &failure)
+        {
             return 0;
         }
-   }
-   else if(argc == 3)
-   {
-       const char* command = argv[1];
-       const char* img = argv[2];
-        if(strcmp(command, "--dft") == 0)
-       {
-           save(dft(img), img, "_dft.bmp");
-
-       }
-       else if(strcmp(command, "--idft") == 0)
-       {
-
-           clock_t start, end;
-           start = clock();
-           dft(img);
-           save(idft(img), img, "_idft.bmp");
-           end = clock();
-           double duration_sec = double(end - start) / CLOCKS_PER_SEC;
-           cout << "The operation took " << duration_sec << " seconds.";
-       }
-        else if(strcmp(command, "--fft") == 0)
-        {
-            clock_t start, end;
-            start = clock();
-            save(fft(img), img, "_fft.bmp");
-            end = clock();
-            double duration_sec = double(end - start) / CLOCKS_PER_SEC;
-            cout << "The operation took " << duration_sec << " seconds.";
-
-        }
-   }
-   else if(argc == 4)
-   {
-       const char* command = argv[1];
-       const char* img = argv[2];
-       int attribute = atoi(argv[3]);
-         if(strcmp(command, "--low_pass_filter") == 0)
-       {
-          // pass_filter(img, attribute, 0);
-       }
-       else if(strcmp(command, "--high_pass_filter") == 0)
-       {
-         //  pass_filter(img, attribute, 1);
-       }
-
-    else if(strcmp(command, "--high_pass_filter_edges") == 0)
-       {
-           const char* mask = argv[3];
-           //high_pass_filter_edges(img,mask);
-       }
-   }
-   else if(argc == 5)
-   {
-       const char* command = argv[1];
-       const char* img = argv[2];
-       int attribute1 = atoi(argv[3]);
-       int attribute2 = atoi(argv[4]);
-        if(strcmp(command, "--band_pass_filter") == 0)
-       {
-          // band_filter(img, attribute1, attribute2, 0);
-       }
-       else if(strcmp(command, "--band_cut_filter") == 0)
-       {
-          // band_filter(img, attribute1, attribute2, 1);
-       }
-       else if(strcmp(command, "--phase_modifying_filter") == 0)
-       {
-          // phase_modifying_filter(img, attribute1, attribute2);
-       }
-   }
-
-   else if(argc == 6)
-   {
-       const char* command = argv[1];
-       const char* img = argv[2];
-       int attribute1 = atoi(argv[3]);
-       int attribute2 = atoi(argv[4]);
-       int attribute3 = atoi(argv[5]);
-       if(strcmp(command, "--F5") == 0)
-       {
-         // F5(img, attribute1, attribute2, attribute3);
-       }
-
-   }
 
     return 0;
 }
