@@ -82,6 +82,9 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/header_files/Masks.h">
+			<Option target="Task3"/>
+		</Unit>
 		<Unit filename="/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/header_files/RegionGrowing.h">
 			<Option target="Task3"/>
 		</Unit>

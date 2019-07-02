@@ -9,29 +9,16 @@
 using namespace std;
 using namespace cimg_library;
 
-void help();
-int checkFile(const char* img);
-//done
-void slow_fourier(const char* img_name);
-//done
-CImg<complex<double>>& make_fourier(CImg<complex<double>> original, int width, int height, bool inverse);
-//ask
-void normalization(CImg<complex<double>> to_normalize, int width, int height);
-/toBeDone
-void fast_fourier(const char* img_name);
-//toBeDone
-CImg<complex<double>>& make_fast_fourier(CImg<complex<double>> original, int width, int height, bool inverse);
-CImg<complex<double>>& shift(CImg<complex<double>> to_shift, int width, int height);
-void pass_filter(const char* img_name, int radius, int option);
-
-CImg<complex<double>>& pass(CImg<complex<double>> before, int width, int height, int radius, int option);
-void band_filter(const char* img_name, int radius1, int radius2, int option);
-CImg<complex<double>>& band(CImg<complex<double>> before, int width, int height, int radius1, int radius2, int option);
-CImg<complex<double>>& make_mask(int k, int l, int width, int height);
-void phase_modifying_filter(const char* img_name, int k, int l);
-void F5(const char* img, int radius, int angle, int gape);
-void mask_generate(int radius, int angle, int gape, int width, int height);
-CImg<complex<double>>& fast_fast_fourier(CImg<complex<double>> original, int width, int height, bool inverse);
-vector<complex<double>> split(vector<complex<double>> arr);
+CImg<double > dft( char* img_name);
+CImg<double > idft( char* img_name);
+CImg<double> fft( char* name);
+CImg<double> ifft( char* name);
+CImg<double> lowpass( char *name, int threshold);
+CImg<double> highpass( char *name, int threshold);
+CImg<double> bandpass( char *name, int threshold, int bandwidth);
+CImg<double> bandcut( char *name, int threshold, int bandwidth);
+CImg<double> pmod( char *name, int l, int k);
+CImg<double> highpassedgedet( char *name,  char *name2);
+CImg<double> highpassedgedetmask( char *name, float a, float b, float r);
 
 #endif

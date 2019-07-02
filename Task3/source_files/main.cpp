@@ -1,8 +1,13 @@
 #include <iostream>
 #include <cstdlib>
+<<<<<<< HEAD
 #include <header_files/RegionGrowing.h>
 #include "header_files/functions.h"
+=======
+>>>>>>> dev
 #include "header_files/CImg.h"
+#include "header_files/RegionGrowing.h"
+#include "header_files/functions.h"
 
 
 using namespace std;
@@ -31,6 +36,7 @@ int main(int argc, char* argv[])
     {
         const char* command = argv[1];
         const char* img = argv[2];
+
         if (checkFile(img)==0) return 0;
         if ((strcmp(command, "--dilation") == 0))
         {
@@ -52,16 +58,7 @@ int main(int argc, char* argv[])
             closing(img);
             display("image_eroded.bmp");
         }
-        else if ((strcmp(command, "--HMT") == 0))
-        {
-            HMT(img);
-            display("image_processed.bmp");
-        }
-        else if ((strcmp(command, "--HMT_task") == 0))
-        {
-            HMT_task(img);
-            display("image_processed.bmp");
-        }
+
         else if ((strcmp(command, "--M2") == 0))
         {
             M2(img);
@@ -70,36 +67,46 @@ int main(int argc, char* argv[])
         else error();
     }
 
-    /*else if(argc == 4)
-    {
-        const char* command = argv[1];
-        const char* img = argv[2];
-        int option = atoi(argv[3]);
-        if (checkFile(img)==0) return 0;
-        else if ((strcmp(command, "--HMT_task") == 0))
+    else if(argc==4) {
+        const char *command = argv[1];
+        const char *img = argv[2];
+        int mask = atof(argv[3]);
+
+         if ((strcmp(command, "--HMT") == 0))
         {
-            HMT_task(img, option);
-            display("image_processed.bmp");
+            HMT(img,mask);
         }
-    }*/
+    }
 
 
-    else if (argc == 6)
+
+        else if (argc == 6)
     {
         const char* command = argv[1];
 
         if ((strcmp(command, "--reggrow") == 0))
         {
+
             const char* img = argv[2];
             if (checkFile(img) == 0) return 0;
-            int threshold = atof(argv[3]);
+            int threshold = atof(argv[5]);
             if (threshold>255) threshold=255;
-            int x = atoi(argv[4]);
-            int y = atoi(argv[5]);
+            int x = atoi(argv[3]);
+            int y = atoi(argv[4]);
+            CImg<int>image1(img);
+            CImg<int>image2;
+
 
             if ((strcmp(command, "--reggrow") == 0))
+<<<<<<< HEAD
             {
                 applySegmentation(img, x,  y, threshold);
+=======
+            {image2=applySegmentation(image1,x,y,threshold);
+                cout<<"working"<<endl;
+                image2.save("segmented.bmp");
+
+>>>>>>> dev
             }
             else error();
 

@@ -119,6 +119,7 @@ stdint.h
 -
 
 ..//header_files/RegionGrowing.h
+<<<<<<< HEAD
 iostream
 -
 CImg.h
@@ -127,6 +128,12 @@ vector
 -
 header_files/functions.h
 ../header_files/header_files/functions.h
+=======
+header_files/CImg.h
+../header_files/header_files/CImg.h
+vector
+-
+>>>>>>> dev
 
 ..//header_files/functions.h
 iostream
@@ -251,12 +258,21 @@ iostream
 -
 cstdlib
 -
+<<<<<<< HEAD
 header_files/RegionGrowing.h
 -
 header_files/functions.h
 /Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/header_files/functions.h
 header_files/CImg.h
 /Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/header_files/CImg.h
+=======
+header_files/CImg.h
+/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/header_files/CImg.h
+header_files/RegionGrowing.h
+/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/header_files/RegionGrowing.h
+header_files/functions.h
+/Users/szymonrucinski/Documents/Pliki/Studia/Poprawka_Image_Processing/Task3/source_files/header_files/functions.h
+>>>>>>> dev
 
 /usr/local/include/X11/X.h
 X11/Xmd.h

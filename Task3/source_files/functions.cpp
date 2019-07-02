@@ -4,30 +4,37 @@
 #include <algorithm>
 #include <fstream>
 #include <cmath>
-#include "header_files/functions.h"
-#include "header_files/CImg.h"
-#include "header_files/RegionGrowing.h"
-
-
+#include <header_files/RegionGrowing.h>
 
 using namespace std;
 using namespace cimg_library;
-
 int mask1[3][3] = {{1,1,1},{1,0,0},{1,1,1}};
 int mask2[3][3] = {{1,1,1},{1,0,1},{1,0,1}};
 int mask3[3][3] = {{1,1,1},{1,1,1},{1,1,1}};
-int mask4[3][3] = {{1,0,1},{0,0,0},{1,0,1}};
-int mask41[3][3] = {{0,1,0},{1,1,1},{0,1,0}};
-int mask5[3][3] = {{1,1,1},{1,0,0},{1,0,1}};
-int mask6[3][3] = {{1,1,1},{1,1,0},{1,0,1}};
-int mask7[3][3] = {{1,1,1},{0,0,0},{1,1,1}};
-int mask8[3][3] = {{1,1,1},{0,1,0},{1,1,1}};
-int mask9[3][3] = {{1,1,1},{0,0,1},{0,1,1}};
-int mask10[3][3] = {{1,0,0},{1,0,1},{1,1,1}};
-int mask11[4][3][3] = {{{0,2,2},{0,1,2},{0,2,2}},{{0,0,0},{2,1,2},{2,2,2}},
-                       {{2,2,0},{2,1,0},{2,2,0}},{{2,2,2},{2,1,2},{0,0,0}}}; // 0 for black, 1 for white, 2 for inactive
-int maskB1[3][3] = {{1,0,0},{1,0,0},{1,0,0}};
-int maskB2[3][3] = {{0,1,1},{0,1,1},{0,1,1}};
+
+int HMTmasks[4][3][3] = {
+        {
+                {0,   5,   5},
+                {0,   255, 5},
+                {0,   5,   5}
+        },
+        {
+                {0,   0,   0},
+                {5, 255,   5},
+                {5,   5,   5}
+        },
+        {
+                {5,   5,   0},
+                {5,   255, 0},
+                {5,   5,   0}
+        },
+        {
+                {5,   5,   5},
+                {5,   255, 5},
+                {0,   0,   0}
+        },
+
+};
 
 void help()
 {
@@ -107,7 +114,7 @@ void erosion(const char* img_name)
                         {
 
                             //if at least one pixel is white/ not black then
-                            //we make them white in the second image
+                            //we copy them white in the second image
                             if(image_original(i, j)!=mask[1][1])
                             {
                                 image_eroded(x, y) = 255;
@@ -133,66 +140,6 @@ void erosion(const char* img_name)
     image_eroded.save("image_eroded.bmp");
 }
 
-void erosion_task(const char* img_name, int option)
-{
-    int mask[3][3];
-    if(option == 1)
-    {
-        for(int b = 0; b < 3; b++)
-        {
-            for(int a = 0; a < 3; a++)
-            {
-                mask[a][b] = maskB1[b][a];
-            }
-        }
-    }
-    else if(option == 2)
-    {
-        for(int b = 0; b < 3; b++)
-        {
-            for(int a = 0; a < 3; a++)
-            {
-                mask[a][b] = maskB2[b][a];
-            }
-        }
-    }
-    CImg<int> image_original(img_name);
-    int height = image_original.height();
-    int width = image_original.width();
-    CImg<int> image_eroded(height, width); //1 for white, 0 for black
-    for(int y = 0; y < height; y++)
-    {
-        for(int x = 0; x < width; x++)
-        {
-            if(x==0||x==width-1||y==0||y==height-1)
-            {
-                image_eroded(x, y) = image_original(x, y);
-            }
-            else
-            {
-                if(image_original(x, y)==mask[1][1]*255)
-                {
-                    for(int j = y-1, b = 0; j <= y+1; j++, b++)
-                    {
-                        for(int i = x-1, a = 0; i <= x+1; i++, a++)
-                        {
-                            if(mask[a][b]==0&&image_original(i, j)!=mask[1][1]*255)
-                            {
-                                image_eroded(x, y) = 255 * abs(1-mask[1][1]);
-                                i = x+2;
-                                j = y+2;
-                            }
-                        }
-                        if(j == y+1) image_eroded(x, y) = image_original(x, y);
-                    }
-                }
-                else image_eroded(x, y) = image_original(x, y);
-            }
-        }
-    }
-    if(option == 1) image_eroded.save("image_eroded1.bmp");
-    else if (option == 2) image_eroded.save("image_eroded2.bmp");
-}
 
 void dilation(const char* img_name)
 {
@@ -293,93 +240,48 @@ void closing(const char* img_name)
     erosion("image_dilated.bmp");
 }
 
-void HMT(const char* img_name)
+void HMT(const char *name, int mask)
 {
-    CImg<unsigned char> image_original(img_name);
-    int height = image_original.height();
-    int width = image_original.width();
-    CImg<unsigned char> image_processed(height, width);
-    for(int y = 0; y < height; y++)
-    {
-        for(int x = 0; x < width; x++)
+
+        CImg<int> image(name);
+        CImg<double> result = image;
+
+        for (int i = 1; i < image.width() - 1; i++)
         {
-            if(x==0||x==width-1||y==0||y==height-1)
+            for (int j = 1; j < image.height() - 1; j++)
             {
-                image_processed(x, y) = image_original(x, y);
-            }
-            else
-            {
-                if(mask11[0][1][1]*255 == image_original(x, y)) //because every mask has the same color of middle pixel
+                for (int k = 0; k < image.spectrum(); k++)
                 {
-                    for(int masknr = 0; masknr < 4; masknr++)
+                    bool test = true;
+                    for (int y = -1; y <= 1; y++)
                     {
-                        for(int j = y-1, b = 0; j <= y+1; j++, b++)
+                        for (int x = -1; x <= 1; x++)
                         {
-                            for(int i = x-1, a = 0; i <= x+1; i++, a++)
+                            //checking if part of the mask is active 0 or 255
+                            if (HMTmasks[mask][x + 1][y + 1] != 5)
                             {
-                                if(mask11[masknr][a][b] == 2) continue;
-                                if(mask11[masknr][a][b] * 255 != image_original(i, j))
-                                {
-                                    if(masknr == 3)
-                                    {
-                                        image_processed(x, y) = abs(1 - mask11[0][1][1]) * 255;
-                                    }
-                                    i = x+2;
-                                    j = y+2;
-                                }
-                                if(a == 2&& b == 2 && mask11[masknr][a][b] * 255 == image_original(i, j))
-                                {
-                                    image_processed(x, y) = mask11[0][1][1] * 255;
-                                    masknr = 4;
-                                }
+
+                                //if at least one of values of the image that masked was placed on is different
+                                if (image(i + x, j + y, k) != HMTmasks[mask][x + 1][y + 1])
+                                    test = false;
+
                             }
                         }
                     }
+
+                    if (test)
+                        result(i, j, k) = 0;
+                    else
+                        result(i, j, k) = 255;
                 }
-                else image_processed(x, y) = image_original(x, y);
             }
         }
-    }
-    image_processed.save("image_processed.bmp");
+
+
+     result.save("HMT.bmp");
 }
 
-void HMT_task(const char* img_name)
-{
 
-    CImg<int> image_original(img_name);
-    int height = image_original.height();
-    int width = image_original.width();
-    CImg<int> image_eroded1("image_eroded1.bmp");
-    CImg<int> image_eroded2("image_eroded2.bmp");
-    CImg<int> image_processed(width, height);
-    CImg<int> image_complement(width, height);
-    for(int y = 0; y < height; y++)
-    {
-        for(int x = 0; x < width; x++)
-        {
-            image_complement(x, y) = 255 - image_original(x, y);
-        }
-    }
-    image_complement.save("image_complement.bmp");
-    erosion_task(img_name, 1);
-    erosion_task("image_complement.bmp", 2);
-    for(int y = 0; y < height; y++)
-    {
-        for(int x = 0; x < width; x++)
-        {
-            if(image_eroded1(x, y) == image_eroded2(x, y))
-            {
-                image_processed(x, y) = 255;
-            }
-            else
-            {
-                image_processed(x, y) = 0;
-            }
-
-        }
-    }
-    image_processed.save("image_processed.bmp");
-}
 
 int check_coordinates(int fun_width, int fun_height, int fun_x, int fun_y)
 {
@@ -541,3 +443,76 @@ void M2(const char* img_name)
 
 
 
+//////////////////////////////////////////
+            //REGION GROWING
+
+Pixel::Pixel(){};
+Pixel::Pixel(int x, int y)
+{
+    this -> x = x;
+    this -> y = y;
+}
+
+
+CImg<int>& applySegmentation(CImg<int> &original, int x, int y, int threshold){
+    CImg<int>* edited = new CImg<int>(original.width(), original.height(), 1, 3, 0);
+    //CImg<int>* edited = &original;
+
+
+
+
+
+    //Create a 2d array of pointers
+   bool** alreadyInRegion;
+    alreadyInRegion = new bool*[original.width()];
+    for (int i = 0; i < original.width(); i++)
+        alreadyInRegion[i] = new bool[original.height()];
+
+
+    //creating array of 'false' booleans
+    for (int x = 0; x < original.width(); x++)
+        for (int y = 0; y < original.height(); y++)
+            alreadyInRegion[x][y] = false;
+
+        //Create a seed and add it to region
+        
+    Pixel seed(x, y);
+    alreadyInRegion[x][y] = true;
+
+    //Recursive Segmenataion in given directions
+    segmentationRecursive(original, *edited, x + 1, y, threshold, alreadyInRegion, seed);
+    segmentationRecursive(original, *edited, x - 1, y, threshold, alreadyInRegion, seed);
+    segmentationRecursive(original, *edited, x, y + 1, threshold, alreadyInRegion, seed);
+    segmentationRecursive(original, *edited, x, y - 1, threshold, alreadyInRegion, seed);
+
+    return *edited;
+}
+void segmentationRecursive(CImg<int> &original, CImg<int> &edited, int x, int y, int threshold, bool** alreadyInRegion, Pixel seed){
+   //Check if pixel won't pass the boarder
+    if (x < 0 || x > original.width() - 1 || y < 0 || y > original.height() - 1) return;
+    if (alreadyInRegion[x][y]) return;
+    //If it doesn't meet the Euclidean condition
+    if (!euclideanThreshold(original, threshold, x, y, seed.x, seed.y)) return;
+
+    //set pixels to white
+    edited(x, y, 0, 0) = 255;
+    edited(x, y, 0, 1) = 255;
+    edited(x, y, 0, 2) = 255;
+    alreadyInRegion[x][y] = true;
+
+//Run Recursion One again
+    segmentationRecursive(original, edited, x + 1, y, threshold, alreadyInRegion, seed);
+    segmentationRecursive(original, edited, x - 1, y, threshold, alreadyInRegion, seed);
+    segmentationRecursive(original, edited, x, y + 1, threshold, alreadyInRegion, seed);
+    segmentationRecursive(original, edited, x, y - 1, threshold, alreadyInRegion, seed);
+}
+
+bool euclideanThreshold(CImg<int> &original, int threshold, int x1, int y1, int x2, int y2){
+    //calculate pixel value based of Eucdlidean distance with respect to seed;
+    int distance = sqrt(
+            (original(x2, y2, 0, 0) - original(x1, y1, 0, 0)) * (original(x2, y2, 0, 0) - original(x1, y1, 0, 0)) +
+            (original(x2, y2, 0, 1) - original(x1, y1, 0, 1)) * (original(x2, y2, 0, 1) - original(x1, y1, 0, 1)) +
+            (original(x2, y2, 0, 2) - original(x1, y1, 0, 2)) * (original(x2, y2, 0, 2) - original(x1, y1, 0, 2))
+    );
+    return distance < threshold;
+}
