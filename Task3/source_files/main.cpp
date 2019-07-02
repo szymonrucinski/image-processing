@@ -94,15 +94,10 @@ int main(int argc, char* argv[])
 
 
             if ((strcmp(command, "--reggrow") == 0))
-<<<<<<< HEAD
-            {
-                applySegmentation(img, x,  y, threshold);
-=======
             {image2=applySegmentation(image1,x,y,threshold);
                 cout<<"working"<<endl;
                 image2.save("segmented.bmp");
 
->>>>>>> dev
             }
             else error();
 

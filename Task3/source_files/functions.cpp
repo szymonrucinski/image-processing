@@ -185,48 +185,6 @@ void dilation(const char* img_name)
     image_dilated.save("image_dilated.bmp");
 }
 
-void dilation_task(const char* img_name)
-{
-    CImg<int> image_original(img_name);
-    int height = image_original.height();
-    int width = image_original.width();
-    CImg<int> image_complement(width, height);
-    for(int y = 0; y < height; y++)
-    {
-        for(int x = 0; x < width; x++)
-        {
-            image_complement(x, y) = 255 - image_original(x, y);
-        }
-    }
-
-    CImg<int> image_dilated(height, width);
-    int mask[3][3] = {{0,1,1},{0,1,1},{0,1,1}};
-    for(int y = 0; y < height; y++)
-    {
-        for(int x = 0; x < width; x++)
-        {
-            if(x==0||x==width-1||y==0||y==height-1)
-            {
-                image_dilated(x, y) = image_complement(x, y);
-            }
-            else
-            {
-                if(image_complement(x, y)==255 * mask[1][1])
-                {
-                    for(int j = y-1, b = 0; j <= y+1; j++, b++)
-                    {
-                        for(int i = x-1, a = 0; i <= x+1; i++, a++)
-                        {
-                            if(mask[a][b] == mask[1][1]) image_dilated(i, j) = 255 * mask[a][b];
-                        }
-                    }
-                }
-                else image_dilated(x, y) = image_complement(x, y);
-            }
-        }
-    }
-    image_dilated.save("image_dilated.bmp");
-}
 
 void opening(const char* img_name)
 {
