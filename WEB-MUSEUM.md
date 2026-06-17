@@ -1,9 +1,9 @@
-# The Latent Darkroom — browser port of this image-processing coursework
+# The Latent Darkroom, browser port of this image-processing coursework
 
 This branch wraps the original C++/CImg programs in `Task1…Task4` in a small
 web "museum": you apply the algorithms to public-domain photographs live in the
 browser. The C++ is compiled **untouched** to WebAssembly with Emscripten and
-driven exactly as it is from a terminal — write `input.bmp` into an in-memory
+driven exactly as it is from a terminal, write `input.bmp` into an in-memory
 filesystem, run the program's real `main()`, read back the `.bmp` it saves.
 
 ```
@@ -14,17 +14,17 @@ canvas pixels ──encode 24-bit BMP──▶ Emscripten MEMFS  /input.bmp
 
 ## What changed, precisely
 
-Your **algorithm source is byte-for-byte unchanged** — every file under
+Your **algorithm source is byte-for-byte unchanged**, every file under
 `Task*/source_files/*.cpp` is exactly as it was. Only these changed:
 
-1. **`Task*/header_files/CImg.h` (vendored third-party library, 4 copies)** — one
+1. **`Task*/header_files/CImg.h` (vendored third-party library, 4 copies)**, one
    function. Under `-Dcimg_display=0` (no window system, which is the case in a
    browser) CImg's `CImgDisplay::_no_display_exception()` used to `throw`. It now
    returns silently, so the original `CImgDisplay disp(image); while(!disp.is_closed()) disp.wait();`
    blocks become harmless no-ops and execution continues to `image.save(...)`.
    This is library behaviour for a headless target, not your code.
 
-2. **`Task3/header_files/functions.h` and `RegionGrowing.h`** — these still
+2. **`Task3/header_files/functions.h` and `RegionGrowing.h`**, these still
    contained unresolved git merge-conflict markers (`<<<<<<< HEAD … >>>>>>> dev`)
    and never compiled. Resolved to the `dev` side, which is the only one
    consistent with `Task3/source_files/main.cpp` (it calls the `CImg`-returning
@@ -39,14 +39,14 @@ the histogram plot, and the statistical measures (mean, variance, std-dev,
 variation coefficient, skewness, kurtosis).
 
 Omitted from the UI (the code still compiles):
-- **enlarge / shrink** — the originals build the output with width/height swapped
+- **enlarge / shrink**, the originals build the output with width/height swapped
   (`CImg img(height, width, …)`), so non-square images come out transposed.
-- **region growing (`--reggrow`)** — a recursive flood-fill; on any sizeable
+- **region growing (`--reggrow`)**, a recursive flood-fill; on any sizeable
   region it exceeds the browser's WASM call-stack depth (V8 caps recursion
   regardless of linear-memory stack size).
-- **`--M2`** — reads coordinates from `stdin`; no terminal in a browser.
-- **DFT / IDFT** — O(N⁴); the FFT path is exhibited instead.
-- **mse / snr / psnr / md** — compare against a second image.
+- **`--M2`**, reads coordinates from `stdin`; no terminal in a browser.
+- **DFT / IDFT**, O(N⁴); the FFT path is exhibited instead.
+- **mse / snr / psnr / md**, compare against a second image.
 
 ## Building the WASM
 
