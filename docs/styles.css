@@ -44,7 +44,7 @@ a{color:inherit;text-decoration:none}
 /* ---------- hero ---------- */
 .hero{max-width:900px;margin:0 auto;padding:clamp(48px,9vw,120px) clamp(20px,5vw,40px) 30px;text-align:center}
 .kicker{font-family:var(--mono);text-transform:uppercase;letter-spacing:.35em;font-size:11px;color:var(--brass);margin:0 0 18px}
-.hero-title{font-family:var(--serif);font-weight:600;font-size:clamp(40px,8vw,82px);line-height:1.02;margin:0 0 .25em;
+.hero-title{font-family:var(--serif);font-weight:600;font-size:clamp(40px,8vw,82px);line-height:1.14;margin:0 0 .25em;padding-bottom:.08em;
   background:linear-gradient(180deg,#fff,#cdbf9f);-webkit-background-clip:text;background-clip:text;color:transparent}
 .hero-tagline{font-family:var(--serif);font-style:italic;font-size:clamp(17px,2.4vw,23px);color:var(--ink);opacity:.92;margin:.2em auto .9em;max-width:38ch}
 .hero-intro{color:var(--ink-dim);max-width:60ch;margin:0 auto;font-size:16px}
@@ -60,8 +60,7 @@ a{color:inherit;text-decoration:none}
 .card .matframe{position:relative;width:100%;padding:14px;background:
    linear-gradient(145deg,#111 0%,#17171a 100%);border:1px solid #000;
    border-radius:3px;box-shadow:0 18px 40px -18px rgba(0,0,0,.9),inset 0 0 0 1px #2a2a2e}
-.card .matframe::before{content:"";position:absolute;inset:-40% 0 auto 0;height:80%;background:var(--spot);opacity:0;transition:.4s;pointer-events:none}
-.card:hover .matframe::before{opacity:1}
+.card .matframe{overflow:hidden}
 .card .mat{background:var(--mat);padding:12px;border-radius:1px;box-shadow:inset 0 2px 10px rgba(0,0,0,.35)}
 .card img{display:block;width:100%;height:230px;object-fit:cover;filter:saturate(.96) contrast(1.02);
   box-shadow:0 1px 0 rgba(255,255,255,.5)}

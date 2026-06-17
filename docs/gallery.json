@@ -1,10 +1,10 @@
 {
   "museum": {
     "museumName": "The Image Processing",
-    "tagline": "Where masterworks meet the matrix — develop them yourself, one algorithm at a time.",
-    "intro": "Step into a darkroom with no chemicals, only mathematics. Here, public-domain masterworks — Earthrise over a barren Moon, Gordon Parks's Ella Watson, Lange's Migrant Mother, Adams's storm-lit Tetons, FSA Kodachromes — hang as living negatives. Each waits under the enlarger of your curiosity. Slide a histogram, sharpen an edge, unfold a Fourier spectrum, and watch a century of photographic light rearrange itself in real time. Part archive, part observatory, part developing tray: every exhibit is yours to re-expose, and nothing here is ever quite fixed.",
-    "pipelineExplainer": "Nothing is faked in JavaScript. Each filter is real C++ written against the CImg library — the same code you might run on a workstation — compiled by Emscripten to WebAssembly that executes natively in your browser tab. When you click \"apply,\" the canvas pixels are encoded as a BMP and written into Emscripten's in-memory virtual filesystem; your C++ reads that file, runs the convolution, equalization, or FFT, and writes a BMP back out; we read those bytes and paint them onto the canvas. A full round-trip — pixels to file to algorithm to file to pixels — happening locally, at near-native speed, with no image ever leaving your machine.",
-    "creditsNote": "Every exhibit is in the U.S. public domain — NASA and Farm Security Administration / Library of Congress works free of copyright under 17 U.S.C. § 105, plus Ansel Adams's National Park Service mural commission and O'Sullivan's 1873 Wheeler Survey plate — sourced via Wikimedia Commons and the National Archives."
+    "tagline": "Famous public-domain photographs, run through real image-processing code in your browser.",
+    "intro": "A small museum of image processing. Pick a photograph, then run classic algorithms on it — brightness and contrast, median and harmonic filters, edge and line detection, histogram equalisation, morphology, and the Fourier domain — and see the result straight away. The algorithms are the actual C++ I wrote in 2019; nothing is sent anywhere, it all runs on your machine.",
+    "pipelineExplainer": "Each operation is the original C++ program, compiled to WebAssembly and run unchanged. When you apply one, the canvas pixels are written to a BMP in Emscripten's in-memory filesystem; the C++ reads that file, runs the operation, and writes a BMP back; the result is drawn to the canvas. The same code you'd run in a terminal, running in a browser tab.",
+    "creditsNote": "The curated gallery is drawn from public-domain collections — NASA, the Farm Security Administration / Office of War Information, the National Archives (Ansel Adams's National Park Service series), and the 1873 Wheeler Survey — via the Library of Congress, NARA and Wikimedia Commons."
   },
   "exhibits": [
     {
@@ -420,14 +420,14 @@
     },
     {
       "id": "fan-ho-hong-kong-1",
-      "title": "Hong Kong Street Scene (Fan Ho)",
+      "title": "Hong Kong Stairway",
       "photographer": "Fan Ho",
       "year": "mid-20th century",
-      "collection": "Fan Ho estate / gallery reproduction (sourced from souslesetoilesgallery.net).",
+      "collection": "Fan Ho · Hong Kong, 1950s–60s",
       "publicDomainReason": "NOT public domain. Fan Ho (1931–2016) is a modern copyrighted photographer; his works remain under copyright and are reproduced here from a gallery source. This exhibit deviates from the museum's all-public-domain collection basis — include only with the rights holder's permission or for private, non-public study.",
       "commonsPageUrl": "",
-      "placard": "Fan Ho carried his Rolleiflex through the steep stairs, markets, and alleyways of 1950s and 60s Hong Kong, chasing light and shadow with a street photographer's patience. His black-and-white frames turn ordinary pedestrians — a rickshaw puller, a child, a lone figure against a sun-struck wall — into geometric dramas of chiaroscuro. This image is offered here as a tonal study: high-contrast shadow play of exactly the kind that rewards histogram equalization, edge detection, and Fourier analysis.",
-      "altText": "Black-and-white Hong Kong street photograph by Fan Ho, featuring strong light-and-shadow contrast among figures and architecture.",
+      "placard": "Fan Ho (1931–2016) shot Hong Kong from the 1950s with a Rolleiflex, working its markets, alleys and stairwells. Here a woman in a floral cheongsam comes down a grand staircase through shafts of hazy, raking light, other figures scattered on the steps beneath signs reading UP and DOWN. He waited on smoke, mist and backlight to turn ordinary public space into pure geometry and atmosphere.",
+      "altText": "A woman in a floral cheongsam descends a grand staircase through shafts of hazy backlight, other figures on the steps, signs reading UP and DOWN.",
       "bestFor": [
         "contrast",
         "histogram",
@@ -438,18 +438,19 @@
       "img": "assets/gallery/fan-ho-hong-kong-1.jpg",
       "thumb": "assets/gallery/fan-ho-hong-kong-1.thumb.jpg",
       "w": 1280,
-      "h": 895
+      "h": 895,
+      "rights": "© Estate of Fan Ho"
     },
     {
       "id": "fan-ho-hong-kong-2",
-      "title": "Hong Kong Street Scene, vertical (Fan Ho)",
+      "title": "Approaching Shadow (1954)",
       "photographer": "Fan Ho",
       "year": "mid-20th century",
-      "collection": "Fan Ho estate / gallery reproduction (sourced from collageplatform.com).",
+      "collection": "Fan Ho · Hong Kong, 1954",
       "publicDomainReason": "NOT public domain. Fan Ho (1931–2016) is a modern copyrighted photographer; his works remain under copyright and are reproduced here from a gallery source. This exhibit deviates from the museum's all-public-domain collection basis — include only with the rights holder's permission or for private, non-public study.",
       "commonsPageUrl": "",
-      "placard": "A vertical composition in Fan Ho's Hong Kong series, where the city's verticality — staircases, narrow lanes, towering facades — becomes the organizing frame. As in his other work, the photograph leans on extreme tonal contrast: figures swallowed by shadow against bursts of daylight. It is included here as a second tonal study for the darkroom algorithms, particularly well suited to contrast stretching and edge work on a portrait-aspect image.",
-      "altText": "Black-and-white vertical Hong Kong street photograph by Fan Ho, with strong vertical lines and dramatic shadow contrast.",
+      "placard": "Fan Ho's best-known photograph. His cousin stands against a bright textured wall while a hard diagonal shadow advances across it. Fan Ho strengthened that shadow himself in the darkroom, turning a plain wall into an image about youth and time running out. Made in 1954, when he was in his early twenties; work like this won him more than 280 international awards.",
+      "altText": "A young woman stands at the foot of a bright wall as a large diagonal shadow advances toward her.",
       "bestFor": [
         "contrast",
         "histogram",
@@ -460,7 +461,8 @@
       "img": "assets/gallery/fan-ho-hong-kong-2.jpg",
       "thumb": "assets/gallery/fan-ho-hong-kong-2.thumb.jpg",
       "w": 917,
-      "h": 1280
+      "h": 1280,
+      "rights": "© Estate of Fan Ho"
     }
   ]
 }

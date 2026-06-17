@@ -60,6 +60,7 @@
     $('#dYear').textContent = ex.year;
     $('#dCollection').textContent = ex.collection;
     $('#dPlacard').textContent = ex.placard;
+    $('#dBadge').textContent = ex.rights || 'Public domain';
     $('#dProv').textContent = ex.collection;
     $('#commonsWrap').hidden = !ex.commonsPageUrl;
     if (ex.commonsPageUrl) $('#dCommons').href = ex.commonsPageUrl;
