@@ -61,21 +61,26 @@
     $('#dCollection').textContent = ex.collection;
     $('#dPlacard').textContent = ex.placard;
     $('#dProv').textContent = ex.collection;
-    $('#dCommons').href = ex.commonsPageUrl;
+    $('#commonsWrap').hidden = !ex.commonsPageUrl;
+    if (ex.commonsPageUrl) $('#dCommons').href = ex.commonsPageUrl;
     buildRail();
     showView('darkroom');
-    state.src = await loadImage(ex.img);
+    try {
+      state.src = await loadImage(ex.img, 1500);
+    } catch (e) { $('#cmdText').textContent = 'could not load image'; return; }
     // default instrument: a parametric one, so a value slider is visible at once
     selectOp(findOp('brightness'));
   }
 
-  function loadImage(url) {
+  function loadImage(url, cap) {
     return new Promise((resolve, reject) => {
       const img = new Image();
       img.onload = () => {
-        const c = el('canvas'); c.width = img.naturalWidth; c.height = img.naturalHeight;
-        const x = c.getContext('2d'); x.drawImage(img, 0, 0);
-        resolve(x.getImageData(0, 0, c.width, c.height));
+        let w = img.naturalWidth, h = img.naturalHeight;
+        if (cap && Math.max(w, h) > cap) { const s = cap / Math.max(w, h); w = Math.round(w * s); h = Math.round(h * s); }
+        const c = el('canvas'); c.width = w; c.height = h;
+        const x = c.getContext('2d'); x.drawImage(img, 0, 0, w, h);
+        resolve(x.getImageData(0, 0, w, h));
       };
       img.onerror = reject; img.src = url;
     });

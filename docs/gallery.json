@@ -31,50 +31,6 @@
       "h": 1280
     },
     {
-      "id": "man-on-the-moon-aldrin-1969",
-      "title": "A Man on the Moon (Buzz Aldrin Visor Portrait)",
-      "photographer": "Neil A. Armstrong",
-      "year": "1969",
-      "collection": "NASA (Apollo 11; NASA photo ID GPN-2001-000013 / frame AS11-40-5903)",
-      "publicDomainReason": "Public domain as a work created solely by NASA, a U.S. federal government agency. Works produced by U.S. federal employees in the course of their official duties are not subject to copyright under 17 U.S.C. Section 105, and NASA's media policy states NASA material is not protected by copyright unless noted (Wikimedia tag: PD-USGov-NASA).",
-      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Aldrin_Apollo_11.jpg",
-      "placard": "On 20 July 1969, minutes after the first Moonwalk began, Neil Armstrong raised his Hasselblad and framed crewmate Buzz Aldrin against the black lunar sky. Armstrong himself never sought a portrait, so this image of Aldrin became humanity's defining self-reflection: look closely at the golden visor and you see Armstrong, the lander Eagle, and the experiments laid across the Sea of Tranquility. Made by NASA and free of copyright, it remains the most reproduced photograph of human spaceflight.",
-      "altText": "Astronaut Buzz Aldrin stands on the gray lunar surface in a white spacesuit, the black sky behind him; photographer Neil Armstrong and the lunar module are mirrored in Aldrin's gold helmet visor.",
-      "bestFor": [
-        "contrast",
-        "histogram",
-        "edges",
-        "fourier",
-        "morphology"
-      ],
-      "img": "assets/gallery/man-on-the-moon-aldrin-1969.jpg",
-      "thumb": "assets/gallery/man-on-the-moon-aldrin-1969.thumb.jpg",
-      "w": 1280,
-      "h": 1280
-    },
-    {
-      "id": "ed-white-first-american-spacewalk-1965",
-      "title": "First American Spacewalk (Ed White, Gemini 4)",
-      "photographer": "James A. McDivitt (NASA)",
-      "year": "1965",
-      "collection": "NASA (Gemini 4 mission, frame S65-30427)",
-      "publicDomainReason": "Work solely created by NASA, an agency of the U.S. federal government. Under 17 U.S.C. Section 105, works produced by U.S. government employees in the course of their official duties carry no copyright and are in the public domain in the United States. Commons hosts it under the {{PD-USGov-NASA}} tag (the standard NASA-imagery exception, excluding the NASA logo and a few licensed/contractor exceptions, none of which apply here).",
-      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Astronaut_Edward_White_first_American_spacewalk_Gemini_4.jpg",
-      "placard": "On June 3, 1965, command pilot James McDivitt raised his Hasselblad and caught crewmate Ed White drifting free above a cloud-laced Pacific — the first American to walk in space. Tethered by a gold-wrapped 25-foot umbilical, gripping a handheld oxygen-jet gun, White floated for some 23 minutes, so exhilarated he called the order to return \"the saddest moment of my life.\" Made during the Cold War space race, McDivitt's frames flew around the world and proved Americans could live and work outside their craft — a rehearsal for the Moon.",
-      "altText": "Astronaut Ed White floats in space outside the Gemini 4 capsule, tethered by a coiled gold umbilical cord, holding a handheld maneuvering gun, with the blue Earth and white clouds far below him.",
-      "bestFor": [
-        "contrast",
-        "histogram",
-        "edges",
-        "fourier",
-        "morphology"
-      ],
-      "img": "assets/gallery/ed-white-first-american-spacewalk-1965.jpg",
-      "thumb": "assets/gallery/ed-white-first-american-spacewalk-1965.thumb.jpg",
-      "w": 1280,
-      "h": 858
-    },
-    {
       "id": "the-tetons-and-the-snake-river-1942",
       "title": "The Tetons and the Snake River",
       "photographer": "Ansel Adams",
@@ -141,29 +97,6 @@
       "img": "assets/gallery/migrant-mother-1936.jpg",
       "thumb": "assets/gallery/migrant-mother-1936.thumb.jpg",
       "w": 985,
-      "h": 1280
-    },
-    {
-      "id": "apollo-11-bootprint-1969",
-      "title": "Apollo 11 Bootprint in Lunar Soil",
-      "photographer": "Edwin \"Buzz\" Aldrin (NASA)",
-      "year": "1969",
-      "collection": "NASA (Apollo 11, frame AS11-40-5878)",
-      "publicDomainReason": "Public domain because it was created solely by NASA, a U.S. federal government agency. Under 17 U.S.C. Section 105, works prepared by U.S. government employees in the course of their official duties carry no copyright and are public domain in the United States. NASA's media usage guidelines further confirm its imagery is generally not copyrighted.",
-      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Apollo_11_bootprint.jpg",
-      "placard": "On July 20, 1969, an hour into humanity's first moonwalk, Buzz Aldrin pressed his boot into the powdery regolith of the Sea of Tranquility and photographed the impression with his 70mm Hasselblad. The frame, AS11-40-5878, was no vanity shot: it documented a soil-mechanics experiment to gauge how lunar dust compacts under pressure. The sharp, crisp ridges proved the airless surface held its shape perfectly. That single print became the enduring emblem of the first human steps on another world.",
-      "altText": "A close-up of a deep, sharply detailed boot print stamped into fine gray lunar soil, the ridged sole pattern clearly visible amid the cratered powder under harsh raking sunlight.",
-      "bestFor": [
-        "edges",
-        "morphology",
-        "histogram",
-        "contrast",
-        "fourier",
-        "median"
-      ],
-      "img": "assets/gallery/apollo-11-bootprint-1969.jpg",
-      "thumb": "assets/gallery/apollo-11-bootprint-1969.thumb.jpg",
-      "w": 1269,
       "h": 1280
     },
     {
@@ -271,6 +204,113 @@
       "thumb": "assets/gallery/church-taos-pueblo-1942.thumb.jpg",
       "w": 965,
       "h": 1280
+    },
+    {
+      "id": "parks-ella-watson-family-1942",
+      "title": "Mrs. Ella Watson, a Government Charwoman, with Three Grandchildren and Her Adopted Daughter",
+      "photographer": "Gordon Parks",
+      "year": "1942",
+      "collection": "Library of Congress, Prints &amp; Photographs Division — Farm Security Administration/Office of War Information (FSA/OWI) Black-and-White Negatives",
+      "publicDomainReason": "Public domain as a work of the U.S. Government (PD-USGov): Gordon Parks made this photograph in August 1942 as a salaried staff photographer for the federal Farm Security Administration / Office of War Information. Works prepared by U.S. Government employees as part of their official duties carry no federal copyright (17 U.S.C. Sec. 105), and the Library of Congress lists no known rights restrictions on the FSA/OWI negatives. This is from Parks's 1942-43 federal employment, NOT his later copyrighted Life-magazine/commercial work.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:GordonParksFSA.jpg",
+      "placard": "Not the famous \"American Gothic\" broom-and-flag frame, this quieter portrait is Gordon Parks's family study of Ella Watson, a Washington charwoman who supported five children on $1,080 a year. Made in August 1942 for the federal FSA/OWI, it seats Watson in her cramped kitchen doorway cradling a grandchild, two more children nearby, while her adopted daughter appears as a reflection in the bureau mirror at right. Parks turned a government assignment into intimate witness to Black working-class life.",
+      "altText": "Black-and-white 1942 photograph: an African American woman, Ella Watson, sits in a small kitchen doorway holding a baby, with two young children near her; at right a dresser holds a framed portrait and a wall mirror reflects a teenage girl, her adopted daughter.",
+      "bestFor": [
+        "contrast",
+        "edges",
+        "histogram",
+        "fourier"
+      ],
+      "img": "assets/gallery/parks-ella-watson-family-1942.jpg",
+      "thumb": "assets/gallery/parks-ella-watson-family-1942.thumb.jpg",
+      "w": 640,
+      "h": 504
+    },
+    {
+      "id": "parks-ella-watson-office-1942",
+      "title": "Washington, D.C. Government charwoman (Ella Watson at work with mop)",
+      "photographer": "Gordon Parks",
+      "year": "1942",
+      "collection": "Library of Congress, Farm Security Administration / Office of War Information (FSA/OWI) Black-and-White Negatives, LOT 156",
+      "publicDomainReason": "Created in August 1942 by Gordon Parks while a salaried federal photographer for the U.S. Farm Security Administration / Office of War Information. As a work prepared by an employee of the U.S. federal government as part of official duties, it is in the public domain (PD-USGov). The Library of Congress lists \"No known restrictions\" for the FSA/OWI black-and-white negatives, which it states are in the public domain and free to use and reuse. (This is the federal FSA/OWI work, NOT Parks's later copyrighted Life-magazine/commercial photography.)",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Ella_Watson_-_Gordon_Parks_LOC_2017765075.jpg",
+      "placard": "In August 1942, FSA photographer Gordon Parks turned his lens on Ella Watson, a government charwoman who cleaned federal offices in wartime Washington, D.C. Here she stands amid shrouded desks, swivel chairs, and a waste bin at the close of her shift, mop in hand, the national flag pinned to the wall behind her. Unlike Parks's tightly framed \"American Gothic\" portrait, this wider scene situates Watson within the very workplace she maintained after hours, quietly indicting the gap between the flag's promise and a Black laborer's reality.",
+      "altText": "A Black woman in a polka-dot dress and round glasses stands holding a mop in a government office filled with desks, swivel chairs, and a waste bin, with a U.S. flag hanging on the wall behind her.",
+      "bestFor": [
+        "Civil rights and labor history exhibits",
+        "Documentary and FSA/OWI photography studies",
+        "Discussions of dignity of work and racial inequality in 1940s America",
+        "Companion piece contrasting Gordon Parks's 'American Gothic'"
+      ],
+      "img": "assets/gallery/parks-ella-watson-office-1942.jpg",
+      "thumb": "assets/gallery/parks-ella-watson-office-1942.thumb.jpg",
+      "w": 821,
+      "h": 1024
+    },
+    {
+      "id": "parks-ella-watson-bible-1942",
+      "title": "Washington, D.C. Mrs. Ella Watson, a government charwoman, reading the Bible to her household",
+      "photographer": "Gordon Parks",
+      "year": "1942",
+      "collection": "Library of Congress, Prints &amp; Photographs Division, Farm Security Administration/Office of War Information (FSA/OWI) Black-and-White Negatives",
+      "publicDomainReason": "Created in August 1942 by Gordon Parks while he was a salaried photographer for the U.S. Farm Security Administration / Office of War Information, a federal agency. As a work prepared by an employee of the U.S. federal government as part of official duties, it carries no copyright and is in the public domain (PD-USGov). It is held in the Library of Congress FSA/OWI collection, which LOC publishes with no known copyright restrictions. This is distinct from Parks's later Life-magazine and commercial work, which IS copyrighted.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Ella_Watson_-_Gordon_Parks_LOC_2017765091.jpg",
+      "placard": "In the summer of 1942, FSA photographer Gordon Parks spent weeks with Ella Watson, a government charwoman, documenting her life beyond her famous \"American Gothic\" portrait. Here, in her apartment at 1433 11th Street NW, Washington, D.C., Watson reads the Bible to her household, her adopted daughter and grandchildren drawn close around her. Parks insisted on naming Watson and her family, resisting the FSA's tendency toward anonymous \"types\" and asserting their full human dignity.",
+      "altText": "Black-and-white photograph of an older Black woman, Ella Watson, seated in a sparsely furnished room reading from an open Bible, with her adopted daughter and several grandchildren gathered attentively around her in their Washington, D.C. apartment, 1942.",
+      "bestFor": [
+        "contrast",
+        "edges",
+        "histogram",
+        "fourier"
+      ],
+      "img": "assets/gallery/parks-ella-watson-bible-1942.jpg",
+      "thumb": "assets/gallery/parks-ella-watson-bible-1942.thumb.jpg",
+      "w": 1024,
+      "h": 815
+    },
+    {
+      "id": "parks-anacostia-dance-1942",
+      "title": "Anacostia, D.C. Frederick Douglass housing project. A dance group",
+      "photographer": "Gordon Parks",
+      "year": "1942",
+      "collection": "U.S. Farm Security Administration / Office of War Information (FSA/OWI) Photograph Collection, Library of Congress Prints &amp; Photographs Division",
+      "publicDomainReason": "Created by Gordon Parks in July 1942 as a salaried federal photographer for the FSA/OWI, making it a work of the U.S. Government and in the public domain (PD-USGov). The Library of Congress lists \"no known restrictions on publication\" for the FSA/OWI black-and-white negatives. This is from his 1942-43 federal employment, not his later copyrighted Life-magazine/commercial work.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Anacostia,_D.C._Frederick_Douglass_housing_project._A_dance_group_(LOC).jpg",
+      "placard": "In July 1942, while employed by the Farm Security Administration, Gordon Parks documented daily life at Anacostia's Frederick Douglass housing project, a community for Black residents in wartime Washington, D.C. Here a group of children practices in a dancing class, their poised arms and bare feet caught mid-movement. Made during the same federal assignment that produced his famous \"American Gothic,\" this quieter image reveals Parks's tender eye for ordinary moments of grace, dignity, and joy in everyday Black life.",
+      "altText": "Black-and-white 1942 photograph of a group of young Black children in a dance class at the Frederick Douglass housing project in Anacostia, Washington, D.C., posed with arms extended.",
+      "bestFor": [
+        "civil rights and Black history exhibits",
+        "World War II home-front documentary photography",
+        "Gordon Parks and FSA/OWI photographers",
+        "history of public housing and urban community life",
+        "education and childhood in 1940s America"
+      ],
+      "img": "assets/gallery/parks-anacostia-dance-1942.jpg",
+      "thumb": "assets/gallery/parks-anacostia-dance-1942.thumb.jpg",
+      "w": 1024,
+      "h": 818
+    },
+    {
+      "id": "parks-bethune-cookman-microscopes-1943",
+      "title": "Daytona Beach, Florida. Bethune-Cookman College. Students using microscopes",
+      "photographer": "Gordon Parks",
+      "year": "1943",
+      "collection": "Library of Congress, Farm Security Administration / Office of War Information (FSA/OWI) Black-and-White Negatives",
+      "publicDomainReason": "Created in February 1943 by Gordon Parks while employed as a staff photographer for the U.S. Office of War Information (domestic photographic unit, formerly FSA). As a work prepared by an employee of the U.S. federal government as part of official duties, it carries no copyright and is in the public domain in the United States (PD-USGov). It is held by the Library of Congress, which states the FSA/OWI negatives collection has no known copyright restrictions. This is the photographer's 1942-43 federal employment, not his later copyrighted Life-magazine/commercial work.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Daytona_Beach,_Florida._Bethune-Cookman_College._Students_using_microscopes_LCCN2017845273.jpg",
+      "placard": "In February 1943, on assignment for the U.S. Office of War Information, Gordon Parks documented daily life at Bethune-Cookman College, a historically Black institution founded by educator Mary McLeod Bethune in Daytona Beach, Florida. Here students bend over microscopes in a science class, an image that quietly countered wartime racial stereotypes by picturing Black Americans as scholars and scientists. Parks framed education as a form of self-determination and national contribution, a recurring theme in his federal photography.",
+      "altText": "Black-and-white photograph of several young Black students seated at a laboratory table, leaning over and looking into microscopes in a science classroom at Bethune-Cookman College, 1943.",
+      "bestFor": [
+        "education and HBCU history exhibits",
+        "World War II home-front documentary photography",
+        "Gordon Parks and FSA/OWI photography retrospectives",
+        "African American achievement and STEM education themes",
+        "1940s American social documentary studies"
+      ],
+      "img": "assets/gallery/parks-bethune-cookman-microscopes-1943.jpg",
+      "thumb": "assets/gallery/parks-bethune-cookman-microscopes-1943.thumb.jpg",
+      "w": 1280,
+      "h": 1017
     }
   ]
 }
