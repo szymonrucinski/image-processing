@@ -65,9 +65,8 @@
     buildRail();
     showView('darkroom');
     state.src = await loadImage(ex.img);
-    // default instrument: an instant, obvious one
-    const neg = findOp('negative');
-    selectOp(neg);
+    // default instrument: a parametric one, so a value slider is visible at once
+    selectOp(findOp('brightness'));
   }
 
   function loadImage(url) {
@@ -120,14 +119,23 @@
     state.op = op;
     document.querySelectorAll('.op').forEach(b => b.classList.toggle('active', b.dataset.op === op.id));
     $('#opdesc').textContent = op.blurb || '';
+    $('#lessonTitle').textContent = op.label;
+    $('#lessonBody').textContent = (OPS.LESSONS && OPS.LESSONS[op.id]) || op.blurb || '';
     renderParams(op);
     apply();
   }
 
   function renderParams(op) {
     const wrap = $('#params'); wrap.innerHTML = '';
-    if (op.work && op.work.binary) addSlider(wrap, { id: '__thr', label: 'binarise', min: 40, max: 210, step: 5, def: state.threshold }, true);
-    (op.params || []).forEach(p => addSlider(wrap, p, false));
+    const sliders = [];
+    if (op.work && op.work.binary) sliders.push([{ id: '__thr', label: 'binarise', min: 40, max: 210, step: 5, def: state.threshold }, true]);
+    (op.params || []).forEach(p => sliders.push([p, false]));
+    if (sliders.length) {
+      wrap.appendChild(el('div', 'ctl-label', 'Adjust — drag to set values'));
+      sliders.forEach(([p, isThr]) => addSlider(wrap, p, isThr));
+    } else {
+      wrap.appendChild(el('div', 'ctl-label muted', 'No parameters — applied directly.'));
+    }
   }
 
   function addSlider(wrap, p, isThreshold) {

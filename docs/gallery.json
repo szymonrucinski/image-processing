@@ -187,6 +187,90 @@
       "thumb": "assets/gallery/ancient-ruins-canon-de-chelle-1873.thumb.jpg",
       "w": 933,
       "h": 1280
+    },
+    {
+      "id": "american-gothic-1942",
+      "title": "American Gothic, Washington, D.C.",
+      "photographer": "Gordon Parks",
+      "year": "1942",
+      "collection": "Library of Congress, Prints &amp; Photographs Division, Farm Security Administration / Office of War Information (FSA/OWI) Collection (call no. LC-DIG-fsa-8b14845; digital ID fsa.8b14845)",
+      "publicDomainReason": "Public domain in the United States as a work of the U.S. federal government. Gordon Parks made this photograph in August 1942 as a staff photographer for the Farm Security Administration / Office of War Information, so under 17 U.S.C. Sec. 105 a work prepared by a federal employee in the course of official duties carries no copyright and is in the public domain from creation. The Library of Congress independently confirms the rights status: the item bears the advisory \"No known restrictions,\" and LOC states that the FSA/OWI black-and-white negatives \"are in the public domain and are free to use and reuse.\" Note: this PD basis applies ONLY to Parks's 1942 FSA/OWI-era images; his later Life magazine and commercial/editorial photographs remain under copyright and are NOT public domain.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Gordon_Parks_-_American_Gothic_full.jpg",
+      "placard": "In August 1942, Gordon Parks, newly hired by the Farm Security Administration, met Ella Watson, a Black charwoman who had cleaned federal offices for years on poverty wages. He posed her holding a broom and mop before the American flag, echoing Grant Wood's 1930 painting. Parks's first Washington picture turned a quiet portrait into a searing indictment of racial inequality at the heart of the wartime capital. It became his signature image and one of the most influential photographs of the twentieth century.",
+      "altText": "Black-and-white photograph of a Black woman in a dark dress standing before a large American flag, holding an upright broom in one hand and a mop beside her, looking directly at the camera.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier"
+      ],
+      "img": "assets/gallery/american-gothic-1942.jpg",
+      "thumb": "assets/gallery/american-gothic-1942.thumb.jpg",
+      "w": 1018,
+      "h": 1280
+    },
+    {
+      "id": "old-faithful-1942",
+      "title": "Old Faithful Geyser Erupting, Yellowstone National Park",
+      "photographer": "Ansel Adams",
+      "year": "c. 1941-1942",
+      "collection": "U.S. National Archives and Records Administration (NARA), Record Group 79 — \"Ansel Adams Photographs of National Parks and Monuments,\" National Archives at College Park (NARA ID 519994)",
+      "publicDomainReason": "Public domain in the United States under 17 U.S.C. § 105: the photograph was produced as part of Adams's official duties under his 1941-1942 commission from the U.S. Department of the Interior / National Park Service for the planned Interior Building photo-murals. As a work prepared for the U.S. federal government it carries no copyright, and the NARA-held original is released with the Public Domain Mark 1.0. (This applies specifically to the NARA/NPS mural-project images — Adams's separately published Yellowstone prints held by museums remain under the Ansel Adams Trust's copyright.)",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Photograph_of_Old_Faithful_Geyser_Erupting_in_Yellowstone_National_Park_-_NARA_-_519994.tif",
+      "placard": "In 1941 the Interior Department hired Ansel Adams to photograph America's national parks for a set of building murals. Traveling that autumn into 1942, he caught Old Faithful mid-eruption, a luminous column of steam towering against a darkened Wyoming sky. World War II halted the project before completion, and the 226 surviving prints passed to the National Archives. Stark, vertical, and elemental, the image distills Adams's belief that wild land was a national treasure worth defending.",
+      "altText": "A tall, bright plume of steam and water from the erupting Old Faithful geyser rises against a dark sky, with the pale geyser cone and sparse trees at its base, in a vertical black-and-white photograph.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier"
+      ],
+      "img": "assets/gallery/old-faithful-1942.jpg",
+      "thumb": "assets/gallery/old-faithful-1942.thumb.jpg",
+      "w": 895,
+      "h": 1280
+    },
+    {
+      "id": "grand-canyon-1942",
+      "title": "Grand Canyon National Park, from Yavapai Point",
+      "photographer": "Ansel Adams",
+      "year": "1941",
+      "collection": "U.S. National Archives and Records Administration (NARA) — Record Group 79, Series AA: \"Ansel Adams Photographs of National Parks and Monuments, 1941–1942,\" local identifier 79-AAF-19 (NAID 10583011). National Park Service Mural Project, Department of the Interior.",
+      "publicDomainReason": "Public domain in the United States as a work of the U.S. federal government. Adams made this frame on commission for the Department of the Interior / National Park Service as part of the Mural Project; NARA documents that these prints are property of the U.S. Government with no copyright restrictions. Under 17 U.S.C. §105, works prepared by a federal employee/agency in the course of official duties carry no copyright (Commons template PD-USGov-Interior-NPS). Note: this PD status applies specifically to the NARA-NPS 79-AA series and FSA/OWI-era Parks work — Adams's commercial and personal photographs (e.g., his Yosemite prints) remain under copyright and are NOT covered.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Grand_Canyon_National_Park_from_Yava_Point_Aaf19.jpg",
+      "placard": "Standing at Yavapai Point on the South Rim in 1941, Ansel Adams aimed his large-format camera into the labyrinth of buttes and side canyons below. He made it for the National Park Service's Mural Project, a Depression-era commission to celebrate America's public lands. Light rakes across receding rock formations, compressing miles of geology into ridges of silver and shadow. The image distills Adams's lifelong argument: that wilderness, precisely seen, deserves protection. It survives, copyright-free, in the National Archives.",
+      "altText": "Black-and-white photograph looking out from Yavapai Point over the Grand Canyon, with sunlit rock formations and deep side canyons receding into shadow toward the far rim.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier"
+      ],
+      "img": "assets/gallery/grand-canyon-1942.jpg",
+      "thumb": "assets/gallery/grand-canyon-1942.thumb.jpg",
+      "w": 1280,
+      "h": 1016
+    },
+    {
+      "id": "church-taos-pueblo-1942",
+      "title": "Church, Taos Pueblo National Historic Landmark, New Mexico",
+      "photographer": "Ansel Adams",
+      "year": "1942",
+      "collection": "U.S. National Archives (NARA), Record Group 79 (Records of the National Park Service) — series \"Ansel Adams Photographs of National Parks and Monuments,\" compiled 1941–1942; National Archives Identifier (NAID) 519983; local identifier 79-AA-Q01.",
+      "publicDomainReason": "Public domain as a work of the U.S. federal government (17 U.S.C. §105 / PD-USGov-Interior-NPS). In 1941–42 the Department of the Interior commissioned Adams to produce a photo mural documenting the National Parks and Monuments; the resulting negatives became U.S. government property and were never under private copyright. This is the crucial distinction: Adams's commercial Yosemite prints remain copyrighted by the Ansel Adams Publishing Rights Trust, but this NARA-NPS / Interior-commission series is genuinely PD. The Commons file carries the NPS-employee/US-federal-government public-domain template, and the original is held in NARA's Still Picture Records (College Park).",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Ansel_Adams_-_National_Archives_79-AA-Q01.jpg",
+      "placard": "In 1942, the Department of the Interior commissioned Ansel Adams to photograph America's national parks and monuments for a planned mural project. At Taos Pueblo, New Mexico, he framed the front entrance of the mission church of San Gerónimo — a centuries-old adobe sanctuary fusing Spanish-Catholic and Pueblo traditions. Adams's exacting tonal control turns sunlit adobe and deep shadow into pure geometry. As a U.S. government commission, the image is public domain, freeing this monument of the Southwest for all.",
+      "altText": "Black-and-white photograph looking up at the front entrance of an adobe mission church at Taos Pueblo, with thick rounded earthen walls, a wooden cross atop the facade, and a bright Southwestern sky above.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier"
+      ],
+      "img": "assets/gallery/church-taos-pueblo-1942.jpg",
+      "thumb": "assets/gallery/church-taos-pueblo-1942.thumb.jpg",
+      "w": 965,
+      "h": 1280
     }
   ]
 }
