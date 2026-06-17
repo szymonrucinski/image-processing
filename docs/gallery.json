@@ -1,8 +1,8 @@
 {
   "museum": {
-    "museumName": "The Latent Darkroom",
+    "museumName": "The Image Processing",
     "tagline": "Where masterworks meet the matrix — develop them yourself, one algorithm at a time.",
-    "intro": "Step into a darkroom with no chemicals, only mathematics. Here eight public-domain masterworks — Earthrise over a barren Moon, Lange's Migrant Mother, Adams's storm-lit Tetons, O'Sullivan's canyon ruins — hang as living negatives. Each waits under the enlarger of your curiosity. Slide a histogram, sharpen an edge, unfold a Fourier spectrum, and watch a century of photographic light rearrange itself in real time. Part archive, part observatory, part developing tray: every exhibit is yours to re-expose, and nothing here is ever quite fixed.",
+    "intro": "Step into a darkroom with no chemicals, only mathematics. Here, public-domain masterworks — Earthrise over a barren Moon, Gordon Parks's Ella Watson, Lange's Migrant Mother, Adams's storm-lit Tetons, FSA Kodachromes — hang as living negatives. Each waits under the enlarger of your curiosity. Slide a histogram, sharpen an edge, unfold a Fourier spectrum, and watch a century of photographic light rearrange itself in real time. Part archive, part observatory, part developing tray: every exhibit is yours to re-expose, and nothing here is ever quite fixed.",
     "pipelineExplainer": "Nothing is faked in JavaScript. Each filter is real C++ written against the CImg library — the same code you might run on a workstation — compiled by Emscripten to WebAssembly that executes natively in your browser tab. When you click \"apply,\" the canvas pixels are encoded as a BMP and written into Emscripten's in-memory virtual filesystem; your C++ reads that file, runs the convolution, equalization, or FFT, and writes a BMP back out; we read those bytes and paint them onto the canvas. A full round-trip — pixels to file to algorithm to file to pixels — happening locally, at near-native speed, with no image ever leaving your machine.",
     "creditsNote": "Every exhibit is in the U.S. public domain — NASA and Farm Security Administration / Library of Congress works free of copyright under 17 U.S.C. § 105, plus Ansel Adams's National Park Service mural commission and O'Sullivan's 1873 Wheeler Survey plate — sourced via Wikimedia Commons and the National Archives."
   },
@@ -417,6 +417,50 @@
       "thumb": "assets/gallery/vachon-seed-feed-store-lincoln-1942.thumb.jpg",
       "w": 1280,
       "h": 908
+    },
+    {
+      "id": "fan-ho-hong-kong-1",
+      "title": "Hong Kong Street Scene (Fan Ho)",
+      "photographer": "Fan Ho",
+      "year": "mid-20th century",
+      "collection": "Fan Ho estate / gallery reproduction (sourced from souslesetoilesgallery.net).",
+      "publicDomainReason": "NOT public domain. Fan Ho (1931–2016) is a modern copyrighted photographer; his works remain under copyright and are reproduced here from a gallery source. This exhibit deviates from the museum's all-public-domain collection basis — include only with the rights holder's permission or for private, non-public study.",
+      "commonsPageUrl": "",
+      "placard": "Fan Ho carried his Rolleiflex through the steep stairs, markets, and alleyways of 1950s and 60s Hong Kong, chasing light and shadow with a street photographer's patience. His black-and-white frames turn ordinary pedestrians — a rickshaw puller, a child, a lone figure against a sun-struck wall — into geometric dramas of chiaroscuro. This image is offered here as a tonal study: high-contrast shadow play of exactly the kind that rewards histogram equalization, edge detection, and Fourier analysis.",
+      "altText": "Black-and-white Hong Kong street photograph by Fan Ho, featuring strong light-and-shadow contrast among figures and architecture.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier",
+        "morphology"
+      ],
+      "img": "assets/gallery/fan-ho-hong-kong-1.jpg",
+      "thumb": "assets/gallery/fan-ho-hong-kong-1.thumb.jpg",
+      "w": 1280,
+      "h": 895
+    },
+    {
+      "id": "fan-ho-hong-kong-2",
+      "title": "Hong Kong Street Scene, vertical (Fan Ho)",
+      "photographer": "Fan Ho",
+      "year": "mid-20th century",
+      "collection": "Fan Ho estate / gallery reproduction (sourced from collageplatform.com).",
+      "publicDomainReason": "NOT public domain. Fan Ho (1931–2016) is a modern copyrighted photographer; his works remain under copyright and are reproduced here from a gallery source. This exhibit deviates from the museum's all-public-domain collection basis — include only with the rights holder's permission or for private, non-public study.",
+      "commonsPageUrl": "",
+      "placard": "A vertical composition in Fan Ho's Hong Kong series, where the city's verticality — staircases, narrow lanes, towering facades — becomes the organizing frame. As in his other work, the photograph leans on extreme tonal contrast: figures swallowed by shadow against bursts of daylight. It is included here as a second tonal study for the darkroom algorithms, particularly well suited to contrast stretching and edge work on a portrait-aspect image.",
+      "altText": "Black-and-white vertical Hong Kong street photograph by Fan Ho, with strong vertical lines and dramatic shadow contrast.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier",
+        "median"
+      ],
+      "img": "assets/gallery/fan-ho-hong-kong-2.jpg",
+      "thumb": "assets/gallery/fan-ho-hong-kong-2.thumb.jpg",
+      "w": 917,
+      "h": 1280
     }
   ]
 }

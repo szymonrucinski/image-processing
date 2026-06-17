@@ -1,4 +1,4 @@
-/* The Latent Darkroom — gallery + developing studio controller. */
+/* The Image Processing — gallery + developing studio controller. */
 (() => {
   const $ = s => document.querySelector(s);
   const el = (t, c, h) => { const e = document.createElement(t); if (c) e.className = c; if (h != null) e.innerHTML = h; return e; };
