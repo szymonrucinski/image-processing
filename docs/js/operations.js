@@ -66,10 +66,10 @@
       blurb: 'Where intensity changes fastest — the contours a camera never draws but the eye always finds.',
       ops: [
         { id: 'roberts', label: 'Roberts edges', task: 'Task2', out: 'newOne.bmp',
-          args: () => ['--orobertsi', IN], work: { maxEdge: 700 },
+          args: () => ['--orobertsi', IN], work: { square: 560 },
           blurb: 'The Roberts cross operator — a 2×2 gradient, the oldest edge detector in the book (1963).' },
         { id: 'lines', label: 'Line detector', task: 'Task2', out: 'newOne.bmp',
-          args: () => ['--oslineid', IN], work: { maxEdge: 700 },
+          args: () => ['--oslineid', IN], work: { square: 560 },
           blurb: 'Convolution with a directional line mask, lifting linear structure out of the scene.' },
         { id: 'rayleigh', label: 'Rayleigh equalise', task: 'Task2', out: 'newOne.bmp',
           args: p => ['--hraleigh', IN, String(p.gmin | 0), String(p.gmax | 0)],
