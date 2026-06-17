@@ -1,0 +1,192 @@
+{
+  "museum": {
+    "museumName": "The Latent Darkroom",
+    "tagline": "Where masterworks meet the matrix — develop them yourself, one algorithm at a time.",
+    "intro": "Step into a darkroom with no chemicals, only mathematics. Here eight public-domain masterworks — Earthrise over a barren Moon, Lange's Migrant Mother, Adams's storm-lit Tetons, O'Sullivan's canyon ruins — hang as living negatives. Each waits under the enlarger of your curiosity. Slide a histogram, sharpen an edge, unfold a Fourier spectrum, and watch a century of photographic light rearrange itself in real time. Part archive, part observatory, part developing tray: every exhibit is yours to re-expose, and nothing here is ever quite fixed.",
+    "pipelineExplainer": "Nothing is faked in JavaScript. Each filter is real C++ written against the CImg library — the same code you might run on a workstation — compiled by Emscripten to WebAssembly that executes natively in your browser tab. When you click \"apply,\" the canvas pixels are encoded as a BMP and written into Emscripten's in-memory virtual filesystem; your C++ reads that file, runs the convolution, equalization, or FFT, and writes a BMP back out; we read those bytes and paint them onto the canvas. A full round-trip — pixels to file to algorithm to file to pixels — happening locally, at near-native speed, with no image ever leaving your machine.",
+    "creditsNote": "Every exhibit is in the U.S. public domain — NASA and Farm Security Administration / Library of Congress works free of copyright under 17 U.S.C. § 105, plus Ansel Adams's National Park Service mural commission and O'Sullivan's 1873 Wheeler Survey plate — sourced via Wikimedia Commons and the National Archives."
+  },
+  "exhibits": [
+    {
+      "id": "earthrise-1968",
+      "title": "Earthrise",
+      "photographer": "William \"Bill\" Anders",
+      "year": "1968",
+      "collection": "NASA (Apollo 8, Lunar and Planetary Institute / NASA Johnson Space Center photo archive)",
+      "publicDomainReason": "Public domain in the United States as a work created solely by NASA, an agency of the U.S. federal government. Under 17 U.S.C. § 105, works produced by U.S. government employees in the course of their official duties carry no copyright (PD-USGov / PD-USGov-NASA). NASA's media-usage policy further states that NASA imagery is not protected by copyright unless specifically noted, and no such note applies to AS08-14-2383.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:NASA-Apollo8-Dec24-Earthrise.jpg",
+      "placard": "On December 24, 1968, as Apollo 8 rounded the far side of the Moon on its fourth orbit, the gray lunar horizon suddenly gave way to a small blue Earth rising into the black. Astronaut Bill Anders grabbed a 70mm Hasselblad and color film and pressed the shutter. Catalogued NASA AS08-14-2383, the frame showed humanity its fragile home from 240,000 miles away. Often called the most influential environmental photograph ever taken, it helped ignite the modern ecological movement.",
+      "altText": "The blue-and-white Earth, half in shadow, rising above a barren gray, cratered lunar horizon against the black emptiness of space, photographed from Apollo 8 in lunar orbit.",
+      "bestFor": [
+        "edges",
+        "contrast",
+        "histogram",
+        "fourier",
+        "median",
+        "morphology"
+      ],
+      "img": "assets/gallery/earthrise-1968.jpg",
+      "thumb": "assets/gallery/earthrise-1968.thumb.jpg",
+      "w": 1280,
+      "h": 1280
+    },
+    {
+      "id": "man-on-the-moon-aldrin-1969",
+      "title": "A Man on the Moon (Buzz Aldrin Visor Portrait)",
+      "photographer": "Neil A. Armstrong",
+      "year": "1969",
+      "collection": "NASA (Apollo 11; NASA photo ID GPN-2001-000013 / frame AS11-40-5903)",
+      "publicDomainReason": "Public domain as a work created solely by NASA, a U.S. federal government agency. Works produced by U.S. federal employees in the course of their official duties are not subject to copyright under 17 U.S.C. Section 105, and NASA's media policy states NASA material is not protected by copyright unless noted (Wikimedia tag: PD-USGov-NASA).",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Aldrin_Apollo_11.jpg",
+      "placard": "On 20 July 1969, minutes after the first Moonwalk began, Neil Armstrong raised his Hasselblad and framed crewmate Buzz Aldrin against the black lunar sky. Armstrong himself never sought a portrait, so this image of Aldrin became humanity's defining self-reflection: look closely at the golden visor and you see Armstrong, the lander Eagle, and the experiments laid across the Sea of Tranquility. Made by NASA and free of copyright, it remains the most reproduced photograph of human spaceflight.",
+      "altText": "Astronaut Buzz Aldrin stands on the gray lunar surface in a white spacesuit, the black sky behind him; photographer Neil Armstrong and the lunar module are mirrored in Aldrin's gold helmet visor.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier",
+        "morphology"
+      ],
+      "img": "assets/gallery/man-on-the-moon-aldrin-1969.jpg",
+      "thumb": "assets/gallery/man-on-the-moon-aldrin-1969.thumb.jpg",
+      "w": 1280,
+      "h": 1280
+    },
+    {
+      "id": "ed-white-first-american-spacewalk-1965",
+      "title": "First American Spacewalk (Ed White, Gemini 4)",
+      "photographer": "James A. McDivitt (NASA)",
+      "year": "1965",
+      "collection": "NASA (Gemini 4 mission, frame S65-30427)",
+      "publicDomainReason": "Work solely created by NASA, an agency of the U.S. federal government. Under 17 U.S.C. Section 105, works produced by U.S. government employees in the course of their official duties carry no copyright and are in the public domain in the United States. Commons hosts it under the {{PD-USGov-NASA}} tag (the standard NASA-imagery exception, excluding the NASA logo and a few licensed/contractor exceptions, none of which apply here).",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Astronaut_Edward_White_first_American_spacewalk_Gemini_4.jpg",
+      "placard": "On June 3, 1965, command pilot James McDivitt raised his Hasselblad and caught crewmate Ed White drifting free above a cloud-laced Pacific — the first American to walk in space. Tethered by a gold-wrapped 25-foot umbilical, gripping a handheld oxygen-jet gun, White floated for some 23 minutes, so exhilarated he called the order to return \"the saddest moment of my life.\" Made during the Cold War space race, McDivitt's frames flew around the world and proved Americans could live and work outside their craft — a rehearsal for the Moon.",
+      "altText": "Astronaut Ed White floats in space outside the Gemini 4 capsule, tethered by a coiled gold umbilical cord, holding a handheld maneuvering gun, with the blue Earth and white clouds far below him.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier",
+        "morphology"
+      ],
+      "img": "assets/gallery/ed-white-first-american-spacewalk-1965.jpg",
+      "thumb": "assets/gallery/ed-white-first-american-spacewalk-1965.thumb.jpg",
+      "w": 1280,
+      "h": 858
+    },
+    {
+      "id": "the-tetons-and-the-snake-river-1942",
+      "title": "The Tetons and the Snake River",
+      "photographer": "Ansel Adams",
+      "year": "1942",
+      "collection": "U.S. National Archives and Records Administration (NARA), Record Group 79 — Records of the National Park Service; \"Ansel Adams Photographs of National Parks and Monuments\" (NARA ID 519904 / Local ID 79-AAG-1)",
+      "publicDomainReason": "Public domain as a work of the U.S. federal government. Adams made the image for the National Park Service / Department of the Interior mural project, so it was created as part of a U.S. Government employee/officer commission and carries no copyright under 17 U.S.C. § 105 (Commons template PD-USGov). Held by NARA with no usage restrictions.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Adams_The_Tetons_and_the_Snake_River.jpg",
+      "placard": "In 1942, Ansel Adams aimed his large-format camera across Wyoming's Snake River as it coils toward the storm-lit ramparts of the Grand Tetons. The frame was made for a National Park Service mural project, halted by World War II yet never forgotten. Adams fused his Zone System craft with a conservationist's reverence, rendering water, forest, and granite in luminous tonal scale. The result became an icon of American wilderness photography — so emblematic that a copy now travels aboard NASA's Voyager Golden Record, carrying these mountains beyond the solar system.",
+      "altText": "Black-and-white landscape photograph of the snow-streaked Grand Teton mountain range under a dramatic cloud-filled sky, with the bright S-curve of the Snake River winding through a dark evergreen valley in the foreground.",
+      "bestFor": [
+        "histogram equalization",
+        "contrast stretching",
+        "edge detection",
+        "fourier analysis",
+        "median filtering",
+        "morphology"
+      ],
+      "img": "assets/gallery/the-tetons-and-the-snake-river-1942.jpg",
+      "thumb": "assets/gallery/the-tetons-and-the-snake-river-1942.thumb.jpg",
+      "w": 1280,
+      "h": 1025
+    },
+    {
+      "id": "half-dome-apple-orchard-yosemite-1933",
+      "title": "Trees with Snow on Branches — \"Half Dome, Apple Orchard, Yosemite\"",
+      "photographer": "Ansel Adams",
+      "year": "1933",
+      "collection": "U.S. National Archives (NARA) — Record Group 79, Records of the National Park Service; \"Ansel Adams Photographs of National Parks and Monuments\" (NARA ID 520018)",
+      "publicDomainReason": "Held by the U.S. National Archives and Records Administration in the National Park Service records (RG 79). NARA designates the item with no known copyright restrictions, and Wikimedia Commons hosts it under a Public Domain mark. The photographs in this Department of the Interior / National Park Service series were produced as part of Adams's federal mural commission and are treated as works of the U.S. Government, placing them in the public domain in the United States.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Trees_with_snow_on_branches,_%22Half_Dome,_Apple_Orchard,_Yosemite,%22_California._April_1933.,_1933_-_NARA_-_520018.jpg",
+      "placard": "In April 1933, Ansel Adams turned his large-format lens on Yosemite Valley, framing the sheer granite face of Half Dome behind a bare apple orchard glazed in fresh snow. Adams later made these prints for the U.S. National Park Service as studies for a Department of the Interior mural. With near-white snow against black rock and skeletal branches, the picture distills his lifelong pursuit of tonal extremes — proof that wilderness, precisely seen, could become a national argument for preservation.",
+      "altText": "Black-and-white photograph of bare apple orchard trees coated in snow, with the steep granite cliff of Half Dome rising sharply in the background in Yosemite Valley.",
+      "bestFor": [
+        "histogram",
+        "contrast",
+        "edges",
+        "fourier",
+        "morphology",
+        "median"
+      ],
+      "img": "assets/gallery/half-dome-apple-orchard-yosemite-1933.jpg",
+      "thumb": "assets/gallery/half-dome-apple-orchard-yosemite-1933.thumb.jpg",
+      "w": 1280,
+      "h": 981
+    },
+    {
+      "id": "migrant-mother-1936",
+      "title": "Migrant Mother, Nipomo, California",
+      "photographer": "Dorothea Lange",
+      "year": "1936",
+      "collection": "Library of Congress — Farm Security Administration / Office of War Information Photograph Collection",
+      "publicDomainReason": "Work created by an employee of the U.S. Farm Security Administration (a federal government photographic unit) as part of official duties. Under 17 U.S.C. § 105, works of the U.S. federal government are not eligible for copyright and are in the public domain. The original FSA negatives and prints carry no copyright; the Library of Congress lists no known restrictions on publication.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Lange-MigrantMother02.jpg",
+      "placard": "Dorothea Lange made this photograph in March 1936 at a frozen pea-pickers' camp in Nipomo, California, while documenting Depression hardship for the Farm Security Administration. In ten minutes she shot six frames of Florence Owens Thompson, a 32-year-old mother of seven, and chose this one: a weathered hand at her jaw, two children turned away, an infant in her lap. Published nationwide, it forced relief to the camp and became the defining image of American documentary photography — the human face of the Great Depression.",
+      "altText": "A weary mother in a worn jacket gazes into the distance with a worried expression, her hand against her cheek, an infant asleep in her lap and two children turning their faces against her shoulders, photographed in stark black and white.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "median",
+        "morphology",
+        "fourier"
+      ],
+      "img": "assets/gallery/migrant-mother-1936.jpg",
+      "thumb": "assets/gallery/migrant-mother-1936.thumb.jpg",
+      "w": 985,
+      "h": 1280
+    },
+    {
+      "id": "apollo-11-bootprint-1969",
+      "title": "Apollo 11 Bootprint in Lunar Soil",
+      "photographer": "Edwin \"Buzz\" Aldrin (NASA)",
+      "year": "1969",
+      "collection": "NASA (Apollo 11, frame AS11-40-5878)",
+      "publicDomainReason": "Public domain because it was created solely by NASA, a U.S. federal government agency. Under 17 U.S.C. Section 105, works prepared by U.S. government employees in the course of their official duties carry no copyright and are public domain in the United States. NASA's media usage guidelines further confirm its imagery is generally not copyrighted.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Apollo_11_bootprint.jpg",
+      "placard": "On July 20, 1969, an hour into humanity's first moonwalk, Buzz Aldrin pressed his boot into the powdery regolith of the Sea of Tranquility and photographed the impression with his 70mm Hasselblad. The frame, AS11-40-5878, was no vanity shot: it documented a soil-mechanics experiment to gauge how lunar dust compacts under pressure. The sharp, crisp ridges proved the airless surface held its shape perfectly. That single print became the enduring emblem of the first human steps on another world.",
+      "altText": "A close-up of a deep, sharply detailed boot print stamped into fine gray lunar soil, the ridged sole pattern clearly visible amid the cratered powder under harsh raking sunlight.",
+      "bestFor": [
+        "edges",
+        "morphology",
+        "histogram",
+        "contrast",
+        "fourier",
+        "median"
+      ],
+      "img": "assets/gallery/apollo-11-bootprint-1969.jpg",
+      "thumb": "assets/gallery/apollo-11-bootprint-1969.thumb.jpg",
+      "w": 1269,
+      "h": 1280
+    },
+    {
+      "id": "ancient-ruins-canon-de-chelle-1873",
+      "title": "Ancient Ruins in the Cañon de Chelle",
+      "photographer": "Timothy H. O'Sullivan",
+      "year": "1873",
+      "collection": "U.S. Library of Congress, Prints and Photographs Division (digital ID ppmsca.10055); made for the Wheeler Survey, U.S. War Department",
+      "publicDomainReason": "Public domain on two independent grounds: (1) the photograph was created in 1873 as part of O'Sullivan's official duties on the U.S. Army's Wheeler Survey, making it a work of the U.S. federal government and therefore not subject to copyright; and (2) it was published in 1873, far more than 95 years ago, placing it in the public domain in the United States (all works published before 1929 are PD). The Library of Congress lists no known copyright restrictions.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Ancient_ruins_in_the_Ca%C3%B1on_de_Chelle_10055u.jpg",
+      "placard": "In 1873, Timothy O'Sullivan hauled a wet-plate camera into Arizona's Canyon de Chelly while photographing for the U.S. Army's Wheeler Survey. He aimed his lens at the sheer sandstone wall sheltering the Ancestral Puebloan cliff dwelling later called the White House, perching the masonry ruins fifty feet above the canyon floor. The towering, light-streaked cliff dwarfs the human work below. A masterpiece of frontier survey photography, it fused scientific record with the sublime—shaping how Americans first imagined the West.",
+      "altText": "A towering vertical sandstone cliff face streaked with dark mineral varnish fills the frame; tucked in a shadowed niche near its base sit small pale stone-and-adobe ruins of an Ancestral Puebloan cliff dwelling, with rubble and a sliver of canyon floor below.",
+      "bestFor": [
+        "histogram",
+        "contrast",
+        "edges",
+        "fourier",
+        "median"
+      ],
+      "img": "assets/gallery/ancient-ruins-canon-de-chelle-1873.jpg",
+      "thumb": "assets/gallery/ancient-ruins-canon-de-chelle-1873.thumb.jpg",
+      "w": 933,
+      "h": 1280
+    }
+  ]
+}

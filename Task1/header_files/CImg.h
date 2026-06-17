@@ -7923,7 +7923,9 @@ namespace cimg_library_suffixed {
 #if cimg_display==0
 
     static void _no_display_exception() {
-      throw CImgDisplayException("CImgDisplay(): No display available.");
+      /* WASM/headless port: no window system. Skip instead of throwing so the
+         original CImgDisplay()/.display() GUI calls become harmless no-ops. */
+      return;
     }
 
     //! Destructor - Empty constructor \inplace.
