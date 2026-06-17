@@ -311,6 +311,112 @@
       "thumb": "assets/gallery/parks-bethune-cookman-microscopes-1943.thumb.jpg",
       "w": 1280,
       "h": 1017
+    },
+    {
+      "id": "rosie-the-riveter-1943",
+      "title": "Operating a hand drill at Vultee-Nashville, woman working on a \"Vengeance\" dive bomber, Tennessee",
+      "photographer": "Alfred T. Palmer",
+      "year": "1943",
+      "collection": "U.S. Farm Security Administration / Office of War Information Color Photographs, Library of Congress Prints and Photographs Division (LC-DIG-fsac-1a35371)",
+      "publicDomainReason": "Created by Alfred T. Palmer as a staff photographer for the U.S. Office of War Information, a federal government agency. As a work prepared by an officer or employee of the U.S. Government as part of official duties, it has no copyright protection under 17 U.S.C. § 105 and is in the public domain (PD-USGov). The Library of Congress lists no known restrictions on publication. On Commons it carries the PD US FSA/OWI template.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Rosie_the_Riveter_(Vultee)_DS.jpg",
+      "placard": "This vivid 1943 Kodachrome by Office of War Information photographer Alfred T. Palmer shows a real-life \"Rosie the Riveter\" at the Vultee Aircraft plant in Nashville, Tennessee, drilling a horizontal stabilizer for an A-31 \"Vengeance\" dive bomber. Her scarlet polka-dot bandana, painted nails, and mirrored reflection in the polished aircraft skin made it an enduring emblem of women's wartime industrial labor and a centerpiece of America's \"arsenal of democracy\" propaganda imagery.",
+      "altText": "A Black woman in a red polka-dot bandana and dark navy coverall operates a silver hand drill against the dark polished surface of an aircraft stabilizer, her face and red bandana mirrored in the metal.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier"
+      ],
+      "img": "assets/gallery/rosie-the-riveter-1943.jpg",
+      "thumb": "assets/gallery/rosie-the-riveter-1943.thumb.jpg",
+      "w": 1280,
+      "h": 1022
+    },
+    {
+      "id": "delano-welder-1943",
+      "title": "Mike Evans, a welder, at the rip tracks at Proviso yard of the Chicago and North Western Railroad, Chicago, Illinois",
+      "photographer": "Jack Delano",
+      "year": "1943",
+      "collection": "U.S. Farm Security Administration / Office of War Information Color Photographs, Library of Congress (FSA/OWI, FSAC), Washington, D.C.",
+      "publicDomainReason": "Public domain as a work of the U.S. Federal Government (PD-USGov): created by Jack Delano as an employee of the U.S. Farm Security Administration / Office of War Information domestic photographic units, in the course of official duties. Works of U.S. Government employees are not subject to copyright (17 U.S.C. 105), and the Library of Congress lists no known restrictions on publication.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Mike_Evans,_a_welder,_at_the_rip_tracks_at_Proviso_yard_of_the_C_%26_NW_RR_(i.e._Chicago_and_North_Western_railroad),_Chicago,_Ill._LCCN2017878053.jpg",
+      "placard": "Shot on 4x5 Kodachrome in April 1943, this portrait belongs to Jack Delano's wartime survey of American railroading for the Office of War Information. At the Chicago and North Western's vast Proviso yard, welder Mike Evans pauses amid the rip tracks where damaged freight cars were repaired. Delano's saturated color, then a costly novelty, dignifies ordinary labor sustaining the home-front war effort, capturing the soot, steel, and human face of 1940s industry.",
+      "altText": "A color photograph of a railroad welder, Mike Evans, standing at the repair tracks of a 1940s freight yard, wearing work clothes amid rail equipment.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier"
+      ],
+      "img": "assets/gallery/delano-welder-1943.jpg",
+      "thumb": "assets/gallery/delano-welder-1943.thumb.jpg",
+      "w": 960,
+      "h": 1280
+    },
+    {
+      "id": "pie-town-homesteader-1940",
+      "title": "Jim Norris, homesteader, Pie Town, New Mexico",
+      "photographer": "Russell Lee",
+      "year": "1940",
+      "collection": "Library of Congress, Farm Security Administration / Office of War Information Color Photographs (FSA/OWI Kodachrome collection)",
+      "publicDomainReason": "Work created by Russell Lee as an employee of the U.S. Farm Security Administration / Office of War Information; as a work of the United States federal government it carries no copyright (PD-USGov). The Library of Congress lists the FSA/OWI Color Photographs as having no known copyright restrictions and free to use and reuse.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Jim_Norris,_homesteader,_Pie_Town,_New_Mexico_LCCN2017877723.tif",
+      "placard": "In the autumn of 1940, Russell Lee carried rare Kodachrome film to Pie Town, New Mexico, a hardscrabble homesteading community on the high desert. Here homesteader Jim Norris squints beneath a worn cowboy hat against a brilliant blue sky, every sun-creased line of his face rendered in then-revolutionary color. Made for the Farm Security Administration, the image trades Depression-era gray for vivid, dignified portraiture of ordinary rural Americans building lives on the frontier.",
+      "altText": "Color photograph of a weathered older man in a worn brown cowboy hat and collared shirt, squinting in bright sunlight against a clear blue sky.",
+      "bestFor": [
+        "Great Depression and New Deal history",
+        "Early color (Kodachrome) documentary photography",
+        "American West and homesteading life",
+        "Farm Security Administration / FSA-OWI photography",
+        "Environmental portraiture of rural Americans"
+      ],
+      "img": "assets/gallery/pie-town-homesteader-1940.jpg",
+      "thumb": "assets/gallery/pie-town-homesteader-1940.thumb.jpg",
+      "w": 1280,
+      "h": 899
+    },
+    {
+      "id": "juke-joint-melrose-1940",
+      "title": "A Crossroads Store, Bar, \"Juke Joint,\" and Gas Station, Melrose, Louisiana",
+      "photographer": "Marion Post Wolcott",
+      "year": "1940",
+      "collection": "U.S. Farm Security Administration / Office of War Information Color Photographs, Library of Congress Prints and Photographs Division (digital ID fsac.1a34361)",
+      "publicDomainReason": "Created in June 1940 by Marion Post Wolcott as a salaried photographer of the U.S. Farm Security Administration in the course of her official federal duties. As a work prepared by an employee of the United States federal government, it carries no copyright and is in the public domain in the United States (PD-USGov). It is held in the Library of Congress FSA/OWI Color Photographs collection, which the Library states has no known copyright restrictions.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Marion_Post_Wolcott,_A_cross_roads_store,_bar,_juke_joint,_and_gas_station,_Melrose,_Louisiana,_1940.jpg",
+      "placard": "Among the rarest of Depression-era records are the roughly 1,600 color frames the Farm Security Administration shot on then-new Kodachrome film. Here Marion Post Wolcott, the agency's first full-time woman photographer, trains that vivid palette on a weathered crossroads store, bar, \"juke joint,\" and gas station in the cotton country near Melrose, Louisiana. The saturated reds and ochres lend a startling immediacy to a rural Southern scene more often seen in austere black and white.",
+      "altText": "Color photograph of a weathered wooden crossroads store, bar, juke joint, and gas station with hand-painted signs and a fuel pump, set in the flat cotton-plantation country near Melrose, Louisiana, in 1940.",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier"
+      ],
+      "img": "assets/gallery/juke-joint-melrose-1940.jpg",
+      "thumb": "assets/gallery/juke-joint-melrose-1940.thumb.jpg",
+      "w": 1280,
+      "h": 875
+    },
+    {
+      "id": "vachon-seed-feed-store-lincoln-1942",
+      "title": "Seed and Feed Store, Lincoln, Nebraska",
+      "photographer": "John Vachon",
+      "year": "1942",
+      "collection": "U.S. Farm Security Administration / Office of War Information Color Photographs, Library of Congress (LC-DIG-fsac-1a34282)",
+      "publicDomainReason": "Created by John Vachon as an employee of the U.S. Farm Security Administration / Office of War Information, a U.S. federal government agency. As an official work of the United States Government, it carries no copyright (PD-USGov) and is in the public domain worldwide. The Library of Congress lists no known copyright restrictions for the FSA/OWI color collection.",
+      "commonsPageUrl": "https://commons.wikimedia.org/wiki/File:Seed_and_feed_store,_Lincoln,_Nebr._LCCN2017877923.tif",
+      "placard": "John Vachon shot this vivid Kodachrome on a 1942 assignment for the Farm Security Administration, part of the legendary color survey of wartime America. A modest Lincoln, Nebraska seed and feed store fills the frame, its windows crowded with hand-lettered signs advertising \"Northern Grown Seed Potatoes.\" Where the FSA's famous black-and-white work documented hardship, these rare color frames render Main Street commerce in saturated reds, blues, and golds, preserving the everyday texture of small-town life on the home front.",
+      "altText": "Color photograph of a small-town storefront in Lincoln, Nebraska, 1942: a seed and feed store with large display windows covered in hand-painted signs, including one reading \"Northern Grown Seed Potatoes.\"",
+      "bestFor": [
+        "contrast",
+        "histogram",
+        "edges",
+        "fourier"
+      ],
+      "img": "assets/gallery/vachon-seed-feed-store-lincoln-1942.jpg",
+      "thumb": "assets/gallery/vachon-seed-feed-store-lincoln-1942.thumb.jpg",
+      "w": 1280,
+      "h": 908
     }
   ]
 }
