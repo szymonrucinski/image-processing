@@ -446,6 +446,9 @@ function hangPhoto(ex, pos, normal) {
   photos.push(p);
 }
 
+// centre height of every frame: the tallest one (2.3 m photo + border) still clears the chair rail (1.27 m)
+const HANG_Y = 2.85;
+
 function hangAll() {
   // per room: 3 photos on each side wall; whatever is left goes on the far end wall
   let i = 0;
@@ -453,14 +456,14 @@ function hangAll() {
     for (const side of [-1, 1]) {
       for (const dz of [4, 9, 14]) {
         if (i >= EXHIBITS.length) break;
-        hangPhoto(EXHIBITS[i++], new THREE.Vector3(side * HALF_W, 2.45, -r * ROOM_D - dz), new THREE.Vector3(-side, 0, 0));
+        hangPhoto(EXHIBITS[i++], new THREE.Vector3(side * HALF_W, HANG_Y, -r * ROOM_D - dz), new THREE.Vector3(-side, 0, 0));
       }
     }
   }
   const rest = EXHIBITS.slice(i);
   rest.forEach((ex, k) => {
     const x = (k - (rest.length - 1) / 2) * 4.6;
-    hangPhoto(ex, new THREE.Vector3(x, 2.45, -LEN), new THREE.Vector3(0, 0, 1));
+    hangPhoto(ex, new THREE.Vector3(x, HANG_Y, -LEN), new THREE.Vector3(0, 0, 1));
   });
 }
 
