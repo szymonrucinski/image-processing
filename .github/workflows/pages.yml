@@ -1,0 +1,39 @@
+name: Deploy to GitHub Pages
+
+# This workflow lives only on the `3d` branch. The site root is master's docs/
+# (the 2D museum, unchanged); the 3D museum from this branch is added at /3d/.
+# Note: a push to master alone does not redeploy; the next push to `3d` does.
+
+on:
+  push:
+    branches: [3d]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          ref: master
+          path: master
+      - uses: actions/checkout@v7
+        with:
+          path: 3d
+      - run: rm -rf master/docs/3d && cp -r 3d/docs/3d master/docs/3d
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: master/docs
+      - id: deployment
+        uses: actions/deploy-pages@v5
