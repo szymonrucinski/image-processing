@@ -189,8 +189,8 @@ function buildBuilding() {
     hullFor(seat, 0.03);
     for (const dx of [-1.3, 1.3]) box(dx, 0.22, zc, 0.2, 0.44, 0.7, trim, false);
 
-    // plants in the far corners
-    for (const s of [-1, 1]) plant(s * (HALF_W - 0.8), z0 - ROOM_D + 0.9);
+    // a different plant in each far corner
+    PLANTS[r].forEach((kind, i) => plant(kind, (i ? 1 : -1) * (HALF_W - 0.8), z0 - ROOM_D + 0.9));
 
     // a light in each room so walls get toon bands, not flat fill
     const lamp = new THREE.PointLight(0xffe2b0, 40, 22, 1.6);
@@ -234,29 +234,134 @@ function buildBuilding() {
   scene.add(shadowed(banner));
   for (const dx of [-3.6, 3.6]) box(dx, (H + 5.3) / 2, banner.position.z, 0.04, H - 5.3, 0.04, trim, false);
 
-  // the way out: a door on the entrance wall that leads to the 2D site
-  const door = box(0, 1.5, -0.08, 2.2, 3, 0.16, toon({ color: 0x6b3a1f }), false);
-  hullFor(door, 0.04);
-  door.userData.door = true;
-  solids.push(door);
+  // the way out: panelled double doors in the entrance wall, leading to the 2D site
+  const wood = toon({ color: 0x7a3e1d }), panelWood = toon({ color: 0x9a5a2c }), brass = toon({ color: 0xffd23f });
+  const glass = new THREE.MeshBasicMaterial({ color: 0xbfe9ef }); // daylight behind the panes
+  const door = (m) => { m.userData.door = true; solids.push(m); return m; };
+  for (const s of [-1, 1]) {
+    const x = s * 0.6;
+    hullFor(box(s * 1.32, 1.65, -0.06, 0.24, 3.3, 0.12, trim, false), 0.03);         // frame post
+    hullFor(door(box(x, 1.5, -0.07, 1.18, 3.0, 0.1, wood, false)), 0.025);          // leaf
+    hullFor(door(box(x, 0.95, -0.14, 0.82, 1.25, 0.04, panelWood, false)), 0.02);   // raised lower panel
+    door(box(x, 2.3, -0.125, 0.82, 1.0, 0.02, glass, false));                        // glass upper panel
+    door(box(x, 2.3, -0.14, 0.05, 1.0, 0.03, wood, false));                          // muntins
+    door(box(x, 2.3, -0.14, 0.82, 0.05, 0.03, wood, false));
+    hullFor(door(box(s * 0.13, 1.35, -0.16, 0.05, 0.6, 0.08, brass, false)), 0.015); // push handle
+    door(box(x, 0.12, -0.13, 1.0, 0.16, 0.02, brass, false));                        // kick plate
+  }
+  hullFor(box(0, 3.15, -0.06, 2.88, 0.3, 0.14, trim, false), 0.03);                  // head
+  hullFor(box(0, 3.36, -0.08, 3.1, 0.12, 0.2, trim, false), 0.03);                   // cornice
+  box(0, 0.02, -0.15, 2.6, 0.04, 0.3, trim, false);                                   // threshold
   const exit = new THREE.Mesh(new THREE.PlaneGeometry(2.4, 0.7), toon({ map: signTex('2D MUSEUM', 480, 140, '#13b6c9', '#fff4d6', 96) }));
-  exit.position.set(0, 3.45, -0.03);
+  exit.position.set(0, 3.95, -0.03);
   exit.rotation.y = Math.PI; // the entrance wall faces -z, into the building
   scene.add(exit);
 }
 
-function plant(x, z) {
+// ---------------------------------------------------------------- plants
+// Each plant builds into a group and returns [half footprint, height] for collision.
+const plantMats = {};
+const pm = (color, dbl) => (plantMats[color + (dbl ? 'd' : '')] ??= toon({ color, side: dbl ? THREE.DoubleSide : THREE.FrontSide }));
+function part(g, geo, color, x, y, z, rx = 0, ry = 0, rz = 0, dbl = false) {
+  const m = new THREE.Mesh(geo, pm(color, dbl));
+  m.position.set(x, y, z);
+  m.rotation.set(rx, ry, rz, 'YXZ'); // tilt (z) first, then spin around the stem (y)
+  g.add(m);
+  return m;
+}
+// per-face normals: every rib/facet gets a hard edge the ink pass can draw
+const faceted = (geo) => { geo = geo.toNonIndexed(); geo.computeVertexNormals(); return geo; };
+
+function bonsai(g) {
+  part(g, new THREE.BoxGeometry(1.0, 0.7, 0.6), 0x3b2114, 0, 0.35, 0);          // stand
+  part(g, new THREE.BoxGeometry(0.9, 0.16, 0.5), 0x2f5d8a, 0, 0.78, 0);          // glazed tray
+  part(g, new THREE.BoxGeometry(0.84, 0.02, 0.44), 0x4a3020, 0, 0.87, 0);        // soil
+  const bark = 0x5b3a24;
+  part(g, new THREE.CylinderGeometry(0.07, 0.12, 0.42, 7), bark, -0.06, 1.06, 0, 0, 0, -0.45); // S-curved trunk
+  part(g, new THREE.CylinderGeometry(0.06, 0.08, 0.36, 7), bark, 0.04, 1.4, 0, 0, 0, 0.55);
+  part(g, new THREE.CylinderGeometry(0.04, 0.06, 0.3, 7), bark, -0.03, 1.68, 0, 0, 0, -0.35);
+  part(g, new THREE.CylinderGeometry(0.025, 0.045, 0.5, 6), bark, 0.25, 1.47, 0, 0, 0, -1.15); // branches
+  part(g, new THREE.CylinderGeometry(0.025, 0.04, 0.4, 6), bark, -0.22, 1.6, 0.04, 0, 0, 1.2);
+  for (const [x, y, z, s] of [[0.48, 1.58, 0, 0.27], [-0.42, 1.72, 0.05, 0.23], [0, 1.9, 0, 0.32], [0.16, 2.06, -0.05, 0.18]]) {
+    part(g, new THREE.IcosahedronGeometry(s, 1), 0x2e7d32, x, y, z).scale.y = 0.45; // cloud-pruned pads
+  }
+  return [0.55, 2.2];
+}
+
+function fiddleFig(g) {
+  part(g, new THREE.CylinderGeometry(0.38, 0.3, 0.6, 12), 0xf2e3bf, 0, 0.3, 0);   // cream pot
+  part(g, new THREE.CylinderGeometry(0.4, 0.4, 0.07, 12), 0x3b2114, 0, 0.6, 0);
+  part(g, new THREE.CylinderGeometry(0.035, 0.05, 1.7, 6), 0x5b3a24, 0, 1.45, 0);  // trunk
+  // big oval leaves spiralling up the trunk, tipped outward so their faces show from eye level
+  const leaf = new THREE.SphereGeometry(1, 10, 8).scale(0.16, 0.28, 0.035).translate(0, 0.26, 0);
+  for (let i = 0; i < 16; i++) part(g, leaf, i % 2 ? 0x2b8a3e : 0x37b24d, 0, 1.2 + i * 0.09, 0, 0.75 + (i % 3) * 0.2, i * 2.4, 0);
+  return [0.5, 3.0];
+}
+
+function saguaro(g) {
+  part(g, new THREE.CylinderGeometry(0.5, 0.44, 0.6, 14), 0x8b5a2b, 0, 0.3, 0);   // half whiskey barrel
+  for (const y of [0.12, 0.48]) part(g, new THREE.CylinderGeometry(0.515, 0.5, 0.06, 14), 0x2b2b2b, 0, y, 0); // iron hoops
+  part(g, new THREE.CylinderGeometry(0.47, 0.47, 0.04, 14), 0xe8c27a, 0, 0.6, 0); // sand
+  for (const [x, z, s] of [[0.28, 0.2, 0.09], [-0.3, -0.12, 0.07]]) part(g, faceted(new THREE.DodecahedronGeometry(s)), 0x9c8a73, x, 0.64, z);
+  const green = 0x3f8f3a;
+  const column = (r, h, x, y, z) => {
+    part(g, faceted(new THREE.CylinderGeometry(r, r, h, 8)), green, x, y, z);
+    part(g, faceted(new THREE.SphereGeometry(r, 8, 4, 0, Math.PI * 2, 0, Math.PI / 2)), green, x, y + h / 2, z);
+  };
+  column(0.21, 2.5, 0, 1.85, 0);                                                   // trunk
+  part(g, faceted(new THREE.CylinderGeometry(0.13, 0.13, 0.42, 8)), green, 0.32, 1.6, 0, 0, 0, Math.PI / 2); // right arm
+  column(0.13, 0.85, 0.5, 2.0, 0);
+  part(g, faceted(new THREE.CylinderGeometry(0.11, 0.11, 0.38, 8)), green, -0.3, 2.15, 0, 0, 0, Math.PI / 2); // left arm
+  column(0.11, 0.6, -0.46, 2.42, 0);
+  for (const [x, y] of [[0, 3.32], [0.5, 2.55], [-0.46, 2.84]]) part(g, new THREE.IcosahedronGeometry(0.06, 0), 0xff4f9a, x, y, 0); // blossoms
+  return [0.55, 3.4];
+}
+
+function pricklyPear(g) {
+  part(g, new THREE.CylinderGeometry(0.42, 0.3, 0.55, 10), 0xc8553d, 0, 0.275, 0); // clay pot
+  part(g, new THREE.CylinderGeometry(0.4, 0.4, 0.03, 10), 0xe8c27a, 0, 0.55, 0);
+  const pads = [[0, 0.88, 0, 0, 0, 1], [0.27, 1.38, 0.02, 0.3, -0.45, 0.85], [-0.25, 1.36, -0.02, -0.4, 0.5, 0.9],
+    [0.47, 1.8, 0.04, 0.2, -0.2, 0.7], [-0.4, 1.8, 0, -0.2, 0.35, 0.65], [0.02, 1.85, -0.04, 0.6, 0.05, 0.6]];
+  for (const [x, y, z, ry, rz, s] of pads) part(g, new THREE.SphereGeometry(0.32, 10, 8), 0x5fa83a, x, y, z, 0, ry, rz).scale.set(0.8 * s, s, 0.22 * s);
+  for (const [x, y, z] of [[0.55, 2.03, 0], [0.36, 2.04, 0.02], [-0.47, 2.0, 0], [-0.3, 2.02, 0], [0.04, 2.05, -0.04]]) {
+    part(g, new THREE.SphereGeometry(0.055, 8, 6), 0xd6336c, x, y, z).scale.y = 1.3; // fruit
+  }
+  return [0.5, 2.15];
+}
+
+function snakePlant(g) {
+  part(g, new THREE.CylinderGeometry(0.34, 0.34, 0.75, 16), 0xf5f1e6, 0, 0.375, 0); // white pot
+  part(g, new THREE.CylinderGeometry(0.345, 0.345, 0.08, 16), 0x1d3557, 0, 0.15, 0);
+  const leaf = new THREE.ConeGeometry(0.1, 1, 4).scale(1, 1, 0.25).translate(0, 0.5, 0);
+  for (let i = 0; i < 9; i++) {
+    const a = i * 2.3, r = 0.06 + (i % 3) * 0.07;
+    part(g, leaf, i % 2 ? 0x2d6a4f : 0x52b788, Math.cos(a) * r, 0.72, Math.sin(a) * r, Math.sin(a) * 0.12, a, -Math.cos(a) * 0.12)
+      .scale.y = 1.0 + (i % 4) * 0.25;
+  }
+  return [0.4, 2.0];
+}
+
+function topiary(g) {
+  part(g, new THREE.BoxGeometry(0.7, 0.6, 0.7), 0x1d3557, 0, 0.3, 0);             // square planter
+  part(g, new THREE.BoxGeometry(0.76, 0.08, 0.76), 0xf2e3bf, 0, 0.62, 0);
+  part(g, new THREE.CylinderGeometry(0.04, 0.05, 1.3, 6), 0x5b3a24, 0, 1.25, 0);   // stem
+  part(g, new THREE.IcosahedronGeometry(0.55, 2), 0x2b9348, 0, 2.2, 0);            // clipped ball
+  const v = new THREE.Vector3();
+  for (let i = 0; i < 16; i++) {
+    v.randomDirection().multiplyScalar(0.55);
+    part(g, new THREE.IcosahedronGeometry(0.065, 0), i % 2 ? 0xff70a6 : 0xfff4d6, v.x, 2.2 + v.y, v.z); // blossoms
+  }
+  return [0.45, 2.8];
+}
+
+const PLANTS = [[bonsai, fiddleFig], [saguaro, pricklyPear], [snakePlant, topiary]]; // [left, right] per room
+
+function plant(kind, x, z) {
   const g = new THREE.Group();
-  const pot = new THREE.Mesh(new THREE.CylinderGeometry(0.42, 0.3, 0.7, 10), toon({ color: 0xc8553d }));
-  pot.position.y = 0.35;
-  const leaves = new THREE.Mesh(new THREE.IcosahedronGeometry(0.75, 0), toon({ color: 0x3fa34d }));
-  leaves.position.y = 1.35; leaves.scale.y = 1.3;
-  const top = new THREE.Mesh(new THREE.IcosahedronGeometry(0.5, 0), toon({ color: 0x5cc25f }));
-  top.position.y = 2.1;
-  g.add(pot, leaves, top);
+  const [r, h] = kind(g);
   g.position.set(x, 0, z);
   scene.add(shadowed(g));
-  boxes.push({ x0: x - 0.5, x1: x + 0.5, z0: z - 0.5, z1: z + 0.5, y0: 0, y1: 2.6 });
+  boxes.push({ x0: x - r, x1: x + r, z0: z - r, z1: z + r, y0: 0, y1: h });
 }
 
 // ---------------------------------------------------------------- exhibits
