@@ -87,6 +87,7 @@
 
     #stick { position: fixed; left: 26px; bottom: max(26px, env(safe-area-inset-bottom)); width: 120px; height: 120px; border-radius: 50%; border: 4px solid var(--ink); background: rgba(255, 244, 214, .35); pointer-events: none; }
     #knob { position: absolute; left: 50%; top: 50%; width: 52px; height: 52px; margin: -26px; border-radius: 50%; background: var(--gold); border: 4px solid var(--ink); }
+    #jump { position: fixed; right: 26px; bottom: max(26px, env(safe-area-inset-bottom)); width: 96px; height: 96px; padding: 0; border-radius: 50%; background: var(--orange); font-size: 24px; touch-action: none; }
   </style>
   <script type="importmap">{ "imports": { "three": "https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.min.js" } }</script>
 </head>
@@ -100,6 +101,7 @@
   <div id="cross" hidden></div>
   <div id="prompt" hidden></div>
   <div id="stick" hidden><div id="knob"></div></div>
+  <button id="jump" hidden>JUMP</button>
 
   <div class="overlay" id="intro">
     <div class="card">

@@ -688,6 +688,7 @@ async function openExhibit(p) {
   if (mode !== 'walk') return;
   mode = 'tween';
   aimOff();
+  $('#jump').hidden = true;
   if (document.pointerLockElement) document.exitPointerLock();
   cur.p = p; cur.op = null; cur.src = null; cur.showingBefore = false;
   cur.saved = { yaw: player.yaw, pitch: player.pitch };
@@ -726,6 +727,7 @@ async function closeExhibit() {
   cur.p = null;
   mode = 'walk';
   $('#cross').hidden = TOUCH;
+  $('#jump').hidden = !TOUCH;
 }
 
 function aimOff() {
@@ -955,14 +957,17 @@ $('#start').addEventListener('click', () => {
   mode = 'walk';
   $('#cross').hidden = TOUCH;
   $('#stick').hidden = !TOUCH;
+  $('#jump').hidden = !TOUCH;
   lockPointer();
 });
+// pointerdown, not click: jumps the instant the thumb lands
+$('#jump').addEventListener('pointerdown', (e) => { e.preventDefault(); if (mode === 'walk') jump(); });
 $('#resume').addEventListener('click', () => { $('#paused').hidden = true; lockPointer(); });
 $('#back').addEventListener('click', () => { closeExhibit(); lockPointer(); });
 $('#ba').addEventListener('click', toggleBefore);
 $('#stats').addEventListener('click', showStats);
 $('#hist').addEventListener('click', showHistogram);
-if (TOUCH) $('#keys').textContent = 'Left thumb: walk · Drag: look · Tap a photo to open it';
+if (TOUCH) $('#keys').textContent = 'Left thumb: walk · Drag: look · JUMP button: jump · Tap a photo to open it';
 addEventListener('resize', () => {
   resize();
   if (mode === 'exhibit' && cur.p) { const pose = exhibitPose(cur.p); camera.position.copy(pose.pos); applyViewOffset(pose.offset.x, pose.offset.y); }
