@@ -86,7 +86,7 @@ const HALF_W = 7, ROOM_D = 18, ROOMS = 3, H = 6, T = 0.4, DOOR = 4, DOOR_H = 4.2
 const LEN = ROOM_D * ROOMS;
 const ROOM_COLORS = [0xb3262e, 0x0f7d8c, 0xd8901c];
 const solids = [];   // meshes the crosshair ray can hit (for occlusion)
-const boxes = [];    // XZ rectangles the player collides with
+const boxes = [];    // XZ rectangles + height range the player collides with / stands on
 
 function shadowed(o) { o.traverse((m) => { if (m.isMesh) m.castShadow = m.receiveShadow = true; }); return o; }
 
@@ -95,7 +95,7 @@ function box(cx, cy, cz, sx, sy, sz, mat, collide = true) {
   m.position.set(cx, cy, cz);
   scene.add(m);
   if (collide) {
-    boxes.push({ x0: cx - sx / 2, x1: cx + sx / 2, z0: cz - sz / 2, z1: cz + sz / 2 });
+    boxes.push({ x0: cx - sx / 2, x1: cx + sx / 2, z0: cz - sz / 2, z1: cz + sz / 2, y0: cy - sy / 2, y1: cy + sy / 2 });
     solids.push(m);
   }
   return m;
@@ -256,7 +256,7 @@ function plant(x, z) {
   g.add(pot, leaves, top);
   g.position.set(x, 0, z);
   scene.add(shadowed(g));
-  boxes.push({ x0: x - 0.5, x1: x + 0.5, z0: z - 0.5, z1: z + 0.5 });
+  boxes.push({ x0: x - 0.5, x1: x + 0.5, z0: z - 0.5, z1: z + 0.5, y0: 0, y1: 2.6 });
 }
 
 // ---------------------------------------------------------------- exhibits
@@ -518,8 +518,10 @@ function runTweens(now) {
 }
 
 // ---------------------------------------------------------------- player
-const EYE = 1.65, RADIUS = 0.35, REACH = 5.5;
-const player = { pos: new THREE.Vector3(0, 0, -2.6), vel: new THREE.Vector3(), yaw: 0, pitch: -0.04, bob: 0 };
+const EYE = 1.65, BODY = 1.8, RADIUS = 0.35, REACH = 5.5;
+const JUMP_V = 5.2, GRAVITY = 15; // ~0.9 m jump: clears the benches
+// pos.y = feet height (0 on the floor, more on a bench or mid-jump)
+const player = { pos: new THREE.Vector3(0, 0, -2.6), vel: new THREE.Vector3(), vy: 0, grounded: true, yaw: 0, pitch: -0.04, bob: 0 };
 let mode = 'intro'; // intro | walk | tween | exhibit
 const keys = new Set();
 const stick = { id: null, x0: 0, y0: 0, x: 0, y: 0 };
@@ -527,6 +529,8 @@ const stick = { id: null, x0: 0, y0: 0, x: 0, y: 0 };
 function collide(p) {
   for (let it = 0; it < 2; it++) {
     for (const b of boxes) {
+      // only things at body height block: not the lintel overhead, not a bench we're standing on
+      if (p.y >= b.y1 - 0.01 || p.y + BODY <= b.y0) continue;
       const cx = Math.max(b.x0, Math.min(p.x, b.x1)), cz = Math.max(b.z0, Math.min(p.z, b.z1));
       const dx = p.x - cx, dz = p.z - cz, d2 = dx * dx + dz * dz;
       if (d2 >= RADIUS * RADIUS) continue;
@@ -554,13 +558,31 @@ function walk(dt) {
   player.vel.lerp(want, 1 - Math.exp(-dt * 10));
   player.pos.addScaledVector(player.vel, dt);
   collide(player.pos);
-  const v = player.vel.length();
+  // gravity: fall to the highest surface under our feet (floor or a bench top)
+  const ground = groundAt(player.pos); // measured before falling, so a fast drop can't skip a bench top
+  player.vy -= GRAVITY * dt;
+  player.pos.y += player.vy * dt;
+  player.grounded = player.pos.y <= ground;
+  if (player.grounded) { player.pos.y = ground; player.vy = 0; }
+  const v = player.grounded ? player.vel.length() : 0; // no head bob mid-air
   player.bob += dt * v * 2.1;
   placeCamera(Math.sin(player.bob) * 0.035 * Math.min(1, v / 4));
 }
 
+function groundAt(p) {
+  let g = 0;
+  for (const b of boxes) {
+    if (p.x >= b.x0 && p.x <= b.x1 && p.z >= b.z0 && p.z <= b.z1 && b.y1 <= p.y + 0.05) g = Math.max(g, b.y1);
+  }
+  return g;
+}
+
+function jump() {
+  if (player.grounded) { player.vy = JUMP_V; player.grounded = false; }
+}
+
 function placeCamera(bob = 0) {
-  camera.position.set(player.pos.x, EYE + bob, player.pos.z);
+  camera.position.set(player.pos.x, player.pos.y + EYE + bob, player.pos.z);
   camera.rotation.set(player.pitch, player.yaw, 0);
 }
 
@@ -695,9 +717,9 @@ async function closeExhibit() {
   mode = 'tween';
   $('#panel').classList.add('off');
   $('#prompt').hidden = true;
-  lookAtHelper.position.set(player.pos.x, EYE, player.pos.z);
+  lookAtHelper.position.set(player.pos.x, player.pos.y + EYE, player.pos.z);
   lookAtHelper.rotation.set(cur.saved.pitch, cur.saved.yaw, 0, 'YXZ');
-  await flyTo(new THREE.Vector3(player.pos.x, EYE, player.pos.z), lookAtHelper.quaternion.clone(), { x: 0, y: 0 }, 750);
+  await flyTo(new THREE.Vector3(player.pos.x, player.pos.y + EYE, player.pos.z), lookAtHelper.quaternion.clone(), { x: 0, y: 0 }, 750);
   $('#panel').hidden = true;
   player.yaw = cur.saved.yaw; player.pitch = cur.saved.pitch;
   placeCamera();
@@ -874,6 +896,7 @@ addEventListener('keydown', (e) => {
   if (e.target.tagName === 'INPUT') return;
   keys.add(e.code);
   if (mode === 'walk' && e.code === 'KeyE') interact(target);
+  if (mode === 'walk' && e.code === 'Space') { e.preventDefault(); if (!e.repeat) jump(); }
   if (mode === 'exhibit' && (e.code === 'Escape' || e.code === 'KeyQ')) closeExhibit();
   if (mode === 'exhibit' && e.code === 'KeyB') toggleBefore();
   if (e.code.startsWith('Arrow') && mode === 'walk') e.preventDefault();
